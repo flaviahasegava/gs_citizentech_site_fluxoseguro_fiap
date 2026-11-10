@@ -7,6 +7,13 @@
   box-sizing: border-box;
 }
 
+:root {
+  --destaque-branco: #fbfbfd;
+  --destaque-agua: #06dffb;
+  --background-menu-nav: #00060c;
+  --background: #212c3f;
+}
+
 /* Body ------------------------------ */
 body {
   font-family: "Montserrat", sans-serif;
@@ -25,7 +32,7 @@ body {
 }
 
 #logo-destaque {
-  color: #06dffb;
+  color: var(--destaque-agua);
 }
 
 .logo a {
@@ -33,13 +40,13 @@ body {
   align-items: center;
   gap: 8px;
   text-decoration: none;
-  color: #fbfbfd;
+  color: var(--destaque-branco);
   font-weight: bold;
 }
 
 /* Menu ------------------------------ */
 .container-menu {
-  background-color: #00060c;
+  background-color: var(--background-menu-nav);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -53,7 +60,7 @@ body {
 }
 
 .menu-links {
-  color: #fbfbfd;
+  color: var(--destaque-branco);
   text-decoration: none;
   position: relative;
   padding-bottom: 5px;
@@ -67,114 +74,111 @@ header {
   z-index: 999;
 }
 
-
 /* SEÇÃO HERO */
 
 .hero {
-    min-height: 100vh;
-    background-color: #0b1424;
+  min-height: 100vh;
+  background-color: var(--background);
 
-    /* Imagem adicionada futuramente */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  /* Imagem adicionada futuramente */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    padding: 60px 8%;
+  padding: 60px 8%;
 }
 
 /* CONTEÚDO DO HERO */
 
 .hero-texto {
-    max-width: 550px;
-    color: white;
+  max-width: 550px;
+  color: white;
 }
 
 /* IDENTIFICAÇÃO FIAP */
 
-.identifica {
-    font-size: 13px;
-    font-weight: bold;
-    margin-bottom: 45px;
+.fiap-destaque {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 45px;
 }
 
-.identifica span {
-    color: #ed145b;
+.fiap-destaque {
+  color: #ed145b;
 }
 
 /* TÍTULO FLUXO SEGURO */
-
 .hero-texto h1 {
-    font-size: 48px;
-    font-weight: 800;
-    margin-bottom: 10px;
-    line-height: 1.1;
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  line-height: 1.1;
 }
 
 .hero-texto h1 span {
-    color: #00d9f5;
+  color: #00d9f5;
 }
 
 /* SUBTÍTULO */
 
 .hero-texto h2 {
-    font-size: 30px;
-    font-weight: 400;
-    line-height: 1.3;
-    margin-bottom: 12px;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: 12px;
 }
 
 /* DESCRIÇÃO */
 
 .hero-texto p {
-    font-size: 16px;
-    color: #b8bec9;
-    margin-bottom: 35px;
+  font-size: 16px;
+  color: #b8bec9;
+  margin-bottom: 35px;
 }
 
 /* BOTÃO SAIBA MAIS */
 
 .botao-hero {
-    display: inline-block;
-    padding: 12px 35px;
+  display: inline-block;
+  padding: 12px 35px;
 
-    background-color: #f0f0f0;
-    color: #0b1424;
+  background-color: #f0f0f0;
+  color: #0b1424;
 
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
 
-    border-radius: 2px;
-    transition: 0.3s;
+  border-radius: 2px;
+  transition: 0.3s;
 }
 
 /* EFEITO DO BOTÃO */
 
 .botao-hero:hover {
-    background-color: #00d9f5;
-    transform: translateY(-3px);
+  background-color: #00d9f5;
+  transform: translateY(-3px);
 }
 
 /* RESPONSIVIDADE */
 
 @media (max-width: 768px) {
+  .hero {
+    padding: 60px 6%;
+  }
 
-    .hero {
-        padding: 60px 6%;
-    }
+  .hero-texto h1 {
+    font-size: 36px;
+  }
 
-    .hero-texto h1 {
-        font-size: 36px;
-    }
+  .hero-texto h2 {
+    font-size: 23px;
+  }
 
-    .hero-texto h2 {
-        font-size: 23px;
-    }
-
-    .hero-texto p {
-        font-size: 14px;
-    }
+  .hero-texto p {
+    font-size: 14px;
+  }
 }
