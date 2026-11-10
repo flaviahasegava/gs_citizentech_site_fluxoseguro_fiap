@@ -31,7 +31,7 @@ body {
   font-size: 20px;
 }
 
-#logo-destaque {
+.logo-destaque {
   color: var(--destaque-agua);
 }
 
@@ -76,7 +76,7 @@ header {
 
 /* SEÇÃO HERO */
 
-.hero {
+#hero {
   min-height: 100vh;
   background-color: var(--background);
 
