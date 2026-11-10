@@ -1,4 +1,24 @@
 /* EFEITOS CSS */
+
+/* Menu ------------------------------ */
+/* Ao passar o mouse */
 .menu-links:hover {
-  color: aqua;
+  color: #06DFFB;
+  font-weight: bold;
+}
+
+/* Linha embaixo do link */
+.menu-links::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #06D6FF;
+  transition: width 0.3s ease;
+}
+
+.menu-links:hover::after {
+  width: 100%;
 }

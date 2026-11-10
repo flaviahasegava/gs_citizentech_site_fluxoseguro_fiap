@@ -52,4 +52,6 @@ body {
 .menu-links {
   color: #fbfbfd;
   text-decoration: none;
+  position: relative;
+  padding-bottom: 5px;
 }
