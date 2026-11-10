@@ -10,6 +10,7 @@
 /* Body ------------------------------ */
 body {
   font-family: "Montserrat", sans-serif;
+  padding-top: 75px;
 }
 
 /* Logo ------------------------------ */
@@ -56,6 +57,14 @@ body {
   text-decoration: none;
   position: relative;
   padding-bottom: 5px;
+}
+
+/* Menu Fixo */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
 }
 
 
