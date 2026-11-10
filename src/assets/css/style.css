@@ -5,6 +5,51 @@
   box-sizing: border-box;
 }
 
+/* Body ------------------------------ */
 body {
-    font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Logo ------------------------------ */
+#logo-img {
+  width: 25px;
+  height: 25px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#logo-destaque {
+  color: #06dffb;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #fbfbfd;
+  font-weight: bold;
+}
+
+/* Menu ------------------------------ */
+.container-menu {
+  background-color: #00060c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 220px;
+}
+
+#menu-items {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.menu-links {
+  color: #fbfbfd;
+  text-decoration: none;
 }
