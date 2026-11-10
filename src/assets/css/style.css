@@ -11,7 +11,11 @@
   --destaque-branco: #fbfbfd;
   --destaque-agua: #06dffb;
   --background-menu-nav: #00060c;
-  --background: #212c3f;
+  --background-escuro: #212c3f;
+  --background-claro: #f9fafd;
+  --background-bloco: #E6F1FC;
+  --cor-titulo-principal: #004589;
+  --cor-subtitulo: #5b9cdd;
 }
 
 /* Body ------------------------------ */
@@ -78,7 +82,7 @@ header {
 
 #hero {
   min-height: 100vh;
-  background-color: var(--background);
+  background-color: var(--background-escuro);
 
   /* Imagem adicionada futuramente */
   background-size: cover;
@@ -181,4 +185,39 @@ header {
   .hero-texto p {
     font-size: 14px;
   }
+}
+
+/* Seção: Sobre ------------------------------ */
+#sobre {
+  background-color: var(--background-claro);
+}
+
+.container {
+  display: flex;
+  padding: 110px 150px;
+}
+
+.bloco-conteudo-sobre {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-bloco);
+  line-height: 1.8;
+  margin: 24px;
+  padding: 60px;
+  border-radius: 24px;
+}
+
+.titulo-principal {
+  font-size: 38px;
+  color: var(--cor-titulo-principal);
+}
+
+.subtitulo {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--cor-subtitulo);
+}
+
+.bloco-conteudo-sobre p {
+  font-size: 26px;
 }

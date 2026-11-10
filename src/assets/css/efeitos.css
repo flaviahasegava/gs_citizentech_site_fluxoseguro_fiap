@@ -1,6 +1,6 @@
 /* EFEITOS CSS */
 
-/* Animação do Menu */
+/* Animação do Menu ------------------------------*/
 /* Ao passar o mouse */
 .menu-links:hover {
   color: #06D6FF;
@@ -23,3 +23,5 @@
 .menu-links:hover::after {
   width: 100%;
 }
+
+/* Animação Seção: Sobre ------------------------------*/
