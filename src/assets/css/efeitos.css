@@ -1,1 +1,25 @@
 /* EFEITOS CSS */
+
+/* Animação do Menu */
+/* Ao passar o mouse */
+.menu-links:hover {
+  color: #06D6FF;
+  font-weight: bold;
+}
+
+/* Animação da linha embaixo */
+.menu-links::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #06D6FF;
+  transition: width 0.3s ease;
+}
+
+/* Aparecer a linha embaixo */
+.menu-links:hover::after {
+  width: 100%;
+}
