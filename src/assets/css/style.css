@@ -208,6 +208,7 @@ header {
 /* Seção: Sobre ------------------------------ */
 #sobre {
   background-color: var(--background-escuro);
+  scroll-margin-top: 200px;
 }
 
 .container-sobre {
