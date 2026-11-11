@@ -8,18 +8,25 @@
 }
 
 :root {
+  /* Texto Destaque Cores */
   --cor-destaque-branco: #fbfbfd;
   --cor-destaque-agua: #06dffb;
   --cor-destaque-azul-escuro: #06335f;
+
+  /* Background Cores */
   --background-menu-nav: #00060c;
   --background-escuro: #212c3f;
-  --background-claro: #f9fafd;
+  --background-claro: #f5f5f5;
   --background-bloco: #E6F1FC;
+
+  /* Texto Cores */
   --cor-titulo-principal: #004589;
   --cor-subtitulo: #5b9cdd;
+  --cor-texto-escuro: #001931;
+  
+  /* Selecionar Texto */
   --cor-selecionar-texto: #2262a1;
   --cor-background-selecionar-texto: #aad1f8;
-  --cor-texto-escuro: #001931;
 }
 
 /* Body ------------------------------ */
@@ -213,6 +220,7 @@ header {
 
 .bloco-conteudo-sobre h1 {
   text-transform: uppercase;
+  letter-spacing: 4px;
   font-size: 38px;
   color: var(--cor-titulo-principal);
 }
@@ -234,3 +242,26 @@ header {
 
 
 /* Seção: Objetivos ------------------------------ */
+#objetivos {
+  background-color: var(--background-claro);
+  padding: 150px 150px;
+  text-align: center;
+}
+
+.container-objetivos h3 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 18px;
+}
+
+.container-objetivos h1 {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 55px;
+  font-weight: 700;
+  margin: 16px;
+}
+
+.grid-cards {
+  display: flex;
+}
