@@ -195,7 +195,7 @@ header {
   background-color: var(--background-claro);
 }
 
-.container {
+.container-sobre {
   display: flex;
   padding: 110px 150px;
 }
@@ -210,12 +210,12 @@ header {
   border-radius: 24px;
 }
 
-.titulo-principal {
+.bloco-conteudo-sobre h1 {
   font-size: 38px;
   color: var(--cor-titulo-principal);
 }
 
-.subtitulo {
+.bloco-conteudo-sobre h2 {
   font-size: 22px;
   font-weight: 600;
   color: var(--cor-subtitulo);
