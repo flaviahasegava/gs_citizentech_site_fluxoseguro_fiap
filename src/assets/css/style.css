@@ -30,10 +30,14 @@
   --cor-background-selecionar-texto: #aad1f8;
 }
 
+/* Html ------------------------------ */
+html {
+  scroll-padding-top: 75px;
+}
+
 /* Body ------------------------------ */
 body {
   font-family: "Montserrat", sans-serif;
-  padding-top: 75px;
   background-color: var(--background-escuro);
 }
 
@@ -48,7 +52,6 @@ body {
   font-weight: 700;
   letter-spacing: 2px;
   font-size: 20px;
-
   text-transform: uppercase;
 }
 
@@ -89,7 +92,7 @@ body {
 
 /* Menu Fixo */
 header {
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   z-index: 999;
