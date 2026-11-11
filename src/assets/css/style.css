@@ -329,3 +329,22 @@ header {
   height: auto;
   padding: 120px 150px;
 }
+
+.container-publico h3 {
+  color: var(--cor-subtitulo);
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 2px;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.container-publico h1 {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 70px;
+  font-weight: 700;
+  margin: 16px;
+  color: var(--cor-destaque-branco);
+  text-align: left;
+}
