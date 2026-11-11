@@ -58,6 +58,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 28px 220px;
+  box-shadow: 0px 1px 10px;
 }
 
 #menu-items {
