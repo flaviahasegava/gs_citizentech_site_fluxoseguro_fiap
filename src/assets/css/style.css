@@ -222,17 +222,19 @@ header {
 .container-sobre {
   display: flex;
   padding: 110px 150px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .bloco-conteudo-sobre {
   display: flex;
   flex-direction: column;
+  flex: 1 1 300px;
   background-color: var(--background-bloco);
   line-height: 1.8;
   margin: 24px;
   padding: 60px;
   border-radius: 24px;
-  margin-top: -100px;
 }
 
 .bloco-conteudo-sobre h1 {
@@ -268,6 +270,7 @@ header {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 18px;
+  flex-wrap: wrap;
 }
 
 .container-objetivos h1 {
