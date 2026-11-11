@@ -168,16 +168,16 @@ header {
 /* BOTÃO */
 .botao-hero {
   display: inline-block;
-  padding: 14px 38px;
+  padding: 16px 38px;
 
-  background-color: #001d3a;
+  background-color: var(--background-escuro);
   color: var(--cor-destaque-branco);
 
   text-decoration: none;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 600;
 
-  border: 1px solid var(--cor-destaque-agua);
+  border: 1px solid var(--cor-destaque-branco);
   border-radius: 10px;
 }
 
