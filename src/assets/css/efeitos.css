@@ -180,7 +180,7 @@ p::selection {
 .bloco-conteudo-sobre:hover {
   transform: scale(1.04);
   box-shadow: 0px 15px 35px rgba(2, 4, 43, 0.25);
-  background-color: var(--background-claro);
+  background-color: var(--cor-destaque-branco);
 }
 
 /* Aumentar o h1 */
@@ -210,7 +210,7 @@ p::selection {
 /* Tamanho inicial do card e altura */
 .card-objetivos {
   height: 180px;
-  transition: height 0.5s ease;
+  transition: height 0.6s ease;
 }
 
 /* Ao passar o mouse aumenta de tamanho */
@@ -223,8 +223,9 @@ p::selection {
   opacity: 0; /* Para esconder o parágrafo */
   transform: translateX(30px);
   transition:
-    opacity 0.4s ease,
+    opacity 0.4s ease-out,
     transform 0.4s ease;
+  transition-delay: 0s;
 }
 
 /* Mostra o parágrafo */
@@ -233,11 +234,28 @@ p::selection {
   transform: translateX(0);
 }
 
+/* Animação inicial das img */
+.card-objetivos img {
+  opacity: 0;
+  transform: translateX(10px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+  transition-delay: 0s;
+}
+
+/* Ao passar o mouse mostra a img*/
+.card-objetivos:hover img {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.4s;
+}
+
 .card-objetivos {
   position: relative;
 }
 
-/* Card objetivos transição após passar o mouse */
+/* Card objetivos transição linha após passar o mouse */
 .card-objetivos::before {
   content: "";
   display: block;
