@@ -13,6 +13,12 @@
   }
 }
 
+/* Geral ------------------------------*/
+p::selection {
+  color: var(--cor-selecionar-texto);
+  background-color: var(--cor-background-selecionar-texto);
+}
+
 /* Animação da Logo */
 .logo a {
   transition: transform 0.3s ease;
@@ -200,10 +206,64 @@
   font-weight: 800;
 }
 
-/* Selecionar o texto */
-.bloco-conteudo-sobre p::selection {
-  color: var(--cor-selecionar-texto);
-  background-color: var(--cor-background-selecionar-texto);
+/* Animação Seção: Objetivos ------------------------------*/
+/* Tamanho inicial do card e altura */
+.card-objetivos {
+  height: 180px;
+  transition: height 0.5s ease;
 }
 
-/* Animação Seção: Objetivos ------------------------------*/
+/* Ao passar o mouse aumenta de tamanho */
+.card-objetivos:hover {
+  height: 800px;
+}
+
+/* Animação inicial dos parágrafos */
+.card-objetivos p {
+  opacity: 0; /* Para esconder o parágrafo */
+  transform: translateX(30px);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+/* Mostra o parágrafo */
+.card-objetivos:hover p {
+  opacity: 1; /* Aparecer */
+  transform: translateX(0);
+}
+
+.card-objetivos {
+  position: relative;
+}
+
+/* Card objetivos transição após passar o mouse */
+.card-objetivos::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 8px;
+  background-color: var(--cor-destaque-azul-escuro);
+  border-radius: 5px 5px 0 0;
+  z-index: 10;
+  transition: width 0.3s ease;
+}
+
+/* Linha */
+.card-objetivos:hover::before {
+  width: 100%;
+  background-color: #064e96;
+}
+
+/* Aumentar o tamanho do título */
+.titulo-objetivos {
+  transition: transform 0.3s ease;
+  transform-origin: left center; /* Mantém a animação saindo da esquerda para o centro */
+}
+
+.card-objetivos:hover .titulo-objetivos {
+  transform: scale(1.18);
+}
