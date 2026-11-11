@@ -14,12 +14,12 @@
 }
 
 /* Animação da Logo */
-.logo {
+.logo a{
   transition: transform 0.3s ease;
 }
 
 /* Ao passar o mouse */
-.logo:hover {
+.logo a:hover {
   transform: scale(1.06);
 }
 
