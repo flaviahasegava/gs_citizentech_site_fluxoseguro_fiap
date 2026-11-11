@@ -41,6 +41,14 @@
   width: 100%;
 }
 
+/* Animação Seção: Hero ------------------------------*/
+
+/* EFEITO DO BOTÃO */
+.botao-hero:hover {
+  background-color: #00d9f5;
+  transform: translateY(-3px);
+}
+
 /* Animação Seção: Sobre ------------------------------*/
 
 /* Animação do bloco */
