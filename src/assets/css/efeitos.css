@@ -58,26 +58,6 @@
   width: 100%;
 }
 
-/* Animação Seção: Hero ------------------------------*/
-
-/* EFEITO DO BOTÃO */
-.botao-hero:hover {
-  background-color: var(--cor-destaque-agua);
-  transform: translateY(-3px);
-}
-
-#hero::after {
-  content: "";
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-  height: 200px;
-
-  background-color: var(--background-escuro);
-  clip-path: ellipse(55% 100% at 50% 100%);
-}
-
 /* Animação de entrada (Menu) ------------------------------ */
 .logo {
   opacity: 0;
@@ -111,6 +91,26 @@
 
 #menu-items li:nth-child(6) {
   animation-delay: 0.7s;
+}
+
+/* Animação Seção: Hero ------------------------------*/
+
+/* EFEITO DO BOTÃO */
+.botao-hero:hover {
+  background-color: var(--cor-destaque-agua);
+  transform: translateY(-3px);
+}
+
+#hero::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 200px;
+
+  background-color: var(--background-escuro);
+  clip-path: ellipse(55% 100% at 50% 100%);
 }
 
 /* Animação de entrada (Hero) ------------------------------ */

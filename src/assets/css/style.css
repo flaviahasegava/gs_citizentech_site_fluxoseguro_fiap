@@ -123,6 +123,11 @@ header {
   margin-top: 32px;
 }
 
+.link-externo {
+  text-decoration: none;
+  color: var(--cor-destaque-branco);
+}
+
 /* CONTEÚDO DO HERO */
 .hero-texto {
   max-width: 800px;
