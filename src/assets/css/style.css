@@ -263,7 +263,6 @@ header {
 #objetivos {
   background-color: var(--background-claro);
   padding: 150px 150px;
-  text-align: center;
 }
 
 .container-objetivos h3 {
@@ -271,16 +270,53 @@ header {
   letter-spacing: 2px;
   font-size: 18px;
   flex-wrap: wrap;
+  color: var(--cor-subtitulo);
+  text-align: center;
 }
 
 .container-objetivos h1 {
   text-transform: uppercase;
   letter-spacing: 4px;
-  font-size: 55px;
+  font-size: 70px;
   font-weight: 700;
   margin: 16px;
+  color: var(--cor-titulo-principal);
+  text-align: center;
 }
 
 .grid-cards {
   display: flex;
+  padding: 60px;
+  gap: 40px;
+}
+
+.card-objetivos {
+  background-color: var(--background-bloco);
+  padding: 50px 70px;
+  border-radius: 12px;
+  border: 2px solid #dbe5f0;
+}
+
+.titulo-objetivos {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  color: var(--cor-titulo-principal);
+  text-align: left;
+}
+
+.card-objetivos p {
+  color: var(--cor-texto-escuro);
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.destaque {
+  color: var(--cor-destaque-azul-escuro);
+  font-weight: 800;
 }

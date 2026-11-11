@@ -14,7 +14,7 @@
 }
 
 /* Animação da Logo */
-.logo a{
+.logo a {
   transition: transform 0.3s ease;
 }
 
@@ -205,3 +205,5 @@
   color: var(--cor-selecionar-texto);
   background-color: var(--cor-background-selecionar-texto);
 }
+
+/* Animação Seção: Objetivos ------------------------------*/
