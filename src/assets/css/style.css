@@ -115,6 +115,10 @@ header {
   padding: 150px;
 }
 
+.container-hero {
+  margin-top: 32px;
+}
+
 /* CONTEÚDO DO HERO */
 .hero-texto {
   max-width: 800px;
@@ -183,7 +187,7 @@ header {
 
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
-  .hero {
+  #hero {
     padding: 60px 6%;
   }
 

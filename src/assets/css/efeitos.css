@@ -1,5 +1,18 @@
 /* EFEITOS CSS */
 
+/* Keyframes */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Animação da Logo */
 .logo {
   transition: transform 0.3s ease;
@@ -16,7 +29,7 @@
 
 /* Animação do Menu ------------------------------*/
 .menu-links {
-  position: relative; 
+  position: relative;
   display: inline-block;
   transition: color 0.4s ease;
 }
@@ -36,7 +49,7 @@
   bottom: -5px;
   width: 0;
   height: 2px;
-  background-color: #06D6FF;
+  background-color: var(--cor-destaque-agua);
   transition: width 0.3s ease;
 }
 
@@ -49,7 +62,7 @@
 
 /* EFEITO DO BOTÃO */
 .botao-hero:hover {
-  background-color: #00d9f5;
+  background-color: var(--cor-destaque-agua);
   transform: translateY(-3px);
 }
 
@@ -72,21 +85,23 @@
 /* Aumentar o h1 */
 .bloco-conteudo-sobre h1 {
   display: inline-block;
-  transition: transform 0.3s ease, color 0.3s ease;
-  transform-origin: left; 
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+  transform-origin: left;
 }
 
 .bloco-conteudo-sobre:hover h1 {
   transform: scale(1.06);
 }
 
-.bloco-conteudo-sobre:hover p{
+.bloco-conteudo-sobre:hover p {
   font-weight: 600;
   transition: color 0.8s ease-out;
   color: var(--cor-destaque-azul-escuro);
 }
 
-.bloco-conteudo-sobre:hover h2{
+.bloco-conteudo-sobre:hover h2 {
   font-weight: 800;
 }
 
@@ -94,4 +109,70 @@
 .bloco-conteudo-sobre p::selection {
   color: var(--cor-selecionar-texto);
   background-color: var(--cor-background-selecionar-texto);
+}
+
+/* Animação de entrada (Menu) ------------------------------ */
+.logo {
+  opacity: 0;
+  animation: aparecer 0.4s ease-in-out forwards;
+}
+
+#menu-items li {
+  opacity: 0;
+  animation: aparecer 0.6s ease forwards;
+}
+
+#menu-items li:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+#menu-items li:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+#menu-items li:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+#menu-items li:nth-child(4) {
+  animation-delay: 0.5s;
+}
+
+#menu-items li:nth-child(5) {
+  animation-delay: 0.6s;
+}
+
+#menu-items li:nth-child(6) {
+  animation-delay: 0.7s;
+}
+
+/* Animação de entrada (Hero) ------------------------------ */
+.identificacao,
+.hero-texto h1,
+.hero-texto h2,
+.hero-texto p,
+.botao-hero {
+  opacity: 0;
+  animation: aparecer 1.4s ease-out forwards;
+}
+
+/* Delay de aparecer */
+.identificacao {
+  animation-delay: 0.4s;
+}
+
+.hero-texto h1 {
+  animation-delay: 0.6s;
+}
+
+.hero-texto h2 {
+  animation-delay: 0.8s;
+}
+
+.hero-texto p {
+  animation-delay: 1s;
+}
+
+.botao-hero {
+  animation-delay: 1.4s;
 }
