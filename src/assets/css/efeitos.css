@@ -67,6 +67,16 @@
   transform: scale(1.06);
 }
 
+.bloco-conteudo-sobre:hover p{
+  font-weight: 600;
+  transition: color 0.8s ease-out;
+  color: var(--cor-destaque-azul-escuro);
+}
+
+.bloco-conteudo-sobre:hover h2{
+  font-weight: 800;
+}
+
 /* Selecionar o texto */
 .bloco-conteudo-sobre p::selection {
   color: var(--cor-selecionar-texto);
