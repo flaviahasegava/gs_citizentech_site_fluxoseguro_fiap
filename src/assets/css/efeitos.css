@@ -56,6 +56,17 @@
   box-shadow: 0px 15px 35px rgba(2, 4, 43, 0.25);
 }
 
+/* Aumentar o h1 */
+.bloco-conteudo-sobre h1 {
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+  transform-origin: left; 
+}
+
+.bloco-conteudo-sobre:hover h1 {
+  transform: scale(1.06);
+}
+
 /* Selecionar o texto */
 .bloco-conteudo-sobre p::selection {
   color: var(--cor-selecionar-texto);
