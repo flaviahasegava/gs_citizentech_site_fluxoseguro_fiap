@@ -8,14 +8,17 @@
 }
 
 :root {
-  --destaque-branco: #fbfbfd;
-  --destaque-agua: #06dffb;
+  --cor-destaque-branco: #fbfbfd;
+  --cor-destaque-agua: #06dffb;
   --background-menu-nav: #00060c;
   --background-escuro: #212c3f;
   --background-claro: #f9fafd;
   --background-bloco: #E6F1FC;
   --cor-titulo-principal: #004589;
   --cor-subtitulo: #5b9cdd;
+  --cor-selecionar-texto: #2262a1;
+  --cor-background-selecionar-texto: #aad1f8;
+  --cor-texto-escuro: #001931;
 }
 
 /* Body ------------------------------ */
@@ -36,7 +39,7 @@ body {
 }
 
 .logo-destaque {
-  color: var(--destaque-agua);
+  color: var(--cor-destaque-agua);
 }
 
 .logo a {
@@ -44,7 +47,7 @@ body {
   align-items: center;
   gap: 8px;
   text-decoration: none;
-  color: var(--destaque-branco);
+  color: var(--cor-destaque-branco);
   font-weight: bold;
 }
 
@@ -64,9 +67,8 @@ body {
 }
 
 .menu-links {
-  color: var(--destaque-branco);
+  color: var(--cor-destaque-branco);
   text-decoration: none;
-  position: relative;
   padding-bottom: 5px;
 }
 
@@ -220,4 +222,5 @@ header {
 
 .bloco-conteudo-sobre p {
   font-size: 26px;
+  color: var(--cor-texto-escuro);
 }

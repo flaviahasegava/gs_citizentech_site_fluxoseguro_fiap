@@ -1,10 +1,17 @@
 /* EFEITOS CSS */
 
 /* Animação do Menu ------------------------------*/
+.menu-links {
+  position: relative; 
+  display: inline-block;
+  transition: color 0.4s ease;
+}
+
 /* Ao passar o mouse */
 .menu-links:hover {
-  color: #06D6FF;
+  color: var(--cor-destaque-agua);
   font-weight: bold;
+  transform: scale(1.06);
 }
 
 /* Animação da linha embaixo */
@@ -25,3 +32,22 @@
 }
 
 /* Animação Seção: Sobre ------------------------------*/
+
+/* Animação do bloco */
+.bloco-conteudo-sobre {
+  transition: transform 2.8s ease-in-out;
+  box-shadow: 0px 8px 12px rgba(1, 0, 14, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Aumentar o tamanho do bloco */
+.bloco-conteudo-sobre:hover {
+  transform: scale(1.04);
+  box-shadow: 0px 15px 35px rgba(2, 4, 43, 0.25);
+}
+
+/* Selecionar o texto */
+.bloco-conteudo-sobre p::selection {
+  color: var(--cor-selecionar-texto);
+  background-color: var(--cor-background-selecionar-texto);
+}
