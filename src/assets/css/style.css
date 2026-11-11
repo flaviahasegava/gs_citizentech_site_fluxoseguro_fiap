@@ -217,11 +217,12 @@ header {
 #sobre {
   background-color: var(--background-escuro);
   scroll-margin-top: 200px;
+  height: auto;
+  padding: 120px 150px;
 }
 
 .container-sobre {
   display: flex;
-  padding: 110px 150px;
   flex-wrap: wrap;
   gap: 20px;
 }
@@ -262,7 +263,8 @@ header {
 /* Seção: Objetivos ------------------------------ */
 #objetivos {
   background-color: var(--background-claro);
-  padding: 150px 150px;
+  height: auto;
+  padding: 120px 150px;
 }
 
 .container-objetivos h3 {
@@ -319,4 +321,11 @@ header {
 .destaque {
   color: var(--cor-destaque-azul-escuro);
   font-weight: 800;
+}
+
+/* Seção: Público-Alvo ------------------------------ */
+#publico {
+  background-color: var(--background-escuro);
+  height: auto;
+  padding: 120px 150px;
 }
