@@ -519,19 +519,24 @@ header {
 
 /* Icone do LinkedIn */
 .icon-linkedin {
-  width: 20px;
+  width: 22px;
   margin-right: 5px;
 }
 
 .site-linkedin {
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
+  gap: 2px;
+  padding: 12px 22px;
+  border: 2px solid var(--cor-destaque-azul-escuro);
+  border-radius: 24px;
+  background-color: var(--cor-destaque-azul-escuro);
 }
 
-.site-linkedin a {
-  color: var(--cor-texto-escuro);
-  font-size: 14px;
+.site-linkedin span {
+  color: var(--cor-destaque-branco);
+  font-size: 13px;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 1px;
@@ -566,17 +571,25 @@ header {
   text-transform: uppercase;
   color: var(--cor-titulo-principal);
   font-size: 32px;
-  margin-top: 20px;
-  margin-bottom: 12px;
+  margin: 30px 0 20px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.2;
 }
 
 /* Cards */
 .card-equipe {
-  background-color: var(--background-claro);
-  padding: 40px;
+  background-color: var(--background-bloco);
+  padding: 35px 28px;
   display: flex;
   flex-direction: column;
   flex: 1;
+  position: relative;
+  align-items: left;
+  text-align: left;
+  border: 1px solid var(--cor-titulo-principal);
+  border-radius: 12px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .grid-cards-equipe {
@@ -586,4 +599,17 @@ header {
 
 .grid-cards-equipe a {
   text-decoration: none;
+}
+
+/* Foto */
+.foto-equipe {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 2px solid var(--cor-destaque-azul-escuro);
+  background-image: url("#");
+}
+
+.destaque-core {
+  color: var(--cor-destaque-agua);
 }
