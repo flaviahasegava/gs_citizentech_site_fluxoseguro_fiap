@@ -251,10 +251,6 @@ p::selection {
   transition-delay: 0.4s;
 }
 
-.card-objetivos {
-  position: relative;
-}
-
 /* Card objetivos transição linha após passar o mouse */
 .card-objetivos::before {
   content: "";
@@ -283,7 +279,7 @@ p::selection {
 }
 
 .card-objetivos:hover .titulo-objetivos {
-  transform: scale(1.18);
+  transform: scale(1.05);
 }
 
 /* Animação Seção: Público-Alvo ------------------------------*/
