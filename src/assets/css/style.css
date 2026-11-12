@@ -260,6 +260,255 @@ header {
 }
 
 /* Seção: Tecnologia ------------------------------ */
+/* Seção: Tecnologia ------------------------------ */
+
+#tecnologia {
+  background-color: var(--background-escuro);
+  height: auto;
+  padding: 90px 120px 80px;
+  overflow: hidden;
+}
+
+.container-tecnologia {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.cabecalho-tecnologia {
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: 30px;
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+.cabecalho-tecnologia h3 {
+  color: var(--cor-subtitulo);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.cabecalho-tecnologia h1 {
+  color: var(--cor-destaque-branco);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 58px;
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+
+.cabecalho-tecnologia p {
+  color: #b8bec9;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.area-esferas-tecnologia {
+  position: relative;
+  width: 100%;
+  height: 560px;
+  margin-top: 10px;
+}
+
+/* BOLHAS */
+.bolha-tecnologia {
+  position: absolute;
+  width: 310px;
+  height: 310px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  background: linear-gradient(
+    135deg,
+    var(--cor-titulo-principal),
+    var(--cor-destaque-azul-escuro)
+  );
+
+  border: 2px solid var(--cor-destaque-agua);
+  box-shadow: 0 0 20px rgba(6, 223, 251, 0.18);
+}
+
+/* POSICIONAMENTO - mais para baixo e sobrepostas */
+.bolha-1 {
+  top: 70px;
+  left: 10px;
+  z-index: 1;
+}
+
+.bolha-2 {
+  top: 205px;
+  left: 275px;
+  z-index: 2;
+}
+
+.bolha-3 {
+  top: 70px;
+  left: 540px;
+  z-index: 3;
+}
+
+.bolha-4 {
+  top: 205px;
+  left: 805px;
+  z-index: 4;
+}
+
+/* CONTEÚDO DA BOLHA */
+.conteudo-bolha,
+.hover-bolha {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  padding: 34px;
+  border-radius: 50%;
+}
+
+.conteudo-bolha h2 {
+  color: var(--cor-destaque-branco);
+  font-size: 20px;
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
+
+.conteudo-bolha p {
+  color: var(--cor-destaque-branco);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+/* CAMADA DE HOVER COM IMAGENS */
+.hover-bolha {
+  background: rgba(6, 51, 95, 0.96);
+  opacity: 0;
+}
+
+.imagens-tecnologia {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  max-width: 210px;
+}
+
+.imagens-tecnologia img {
+  width: 82px;
+  height: 82px;
+  object-fit: cover;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 6px;
+  border: 2px solid var(--cor-destaque-agua);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 1350px) {
+  #tecnologia {
+    padding: 90px 60px 80px;
+  }
+
+  .area-esferas-tecnologia {
+    height: 920px;
+  }
+
+  .cabecalho-tecnologia {
+    max-width: 100%;
+    margin-right: 0;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .bolha-1,
+  .bolha-2,
+  .bolha-3,
+  .bolha-4 {
+    position: absolute;
+  }
+
+  .bolha-1 {
+    top: 40px;
+    left: 8%;
+  }
+
+  .bolha-2 {
+    top: 260px;
+    left: 28%;
+  }
+
+  .bolha-3 {
+    top: 40px;
+    left: 48%;
+  }
+
+  .bolha-4 {
+    top: 260px;
+    left: 68%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .area-esferas-tecnologia {
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: 24px;
+    margin-top: 30px;
+  }
+
+  .bolha-1,
+  .bolha-2,
+  .bolha-3,
+  .bolha-4 {
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+
+  .cabecalho-tecnologia h1 {
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 768px) {
+  #tecnologia {
+    padding: 70px 25px;
+  }
+
+  .cabecalho-tecnologia h1 {
+    font-size: 34px;
+  }
+
+  .cabecalho-tecnologia p {
+    font-size: 15px;
+  }
+
+  .area-esferas-tecnologia {
+    grid-template-columns: 1fr;
+  }
+
+  .bolha-tecnologia {
+    width: 290px;
+    height: 290px;
+  }
+
+  .conteudo-bolha h2 {
+    font-size: 18px;
+  }
+
+  .conteudo-bolha p {
+    font-size: 13px;
+  }
+}
+
+
 
 /* Seção: Objetivos ------------------------------ */
 #objetivos {
