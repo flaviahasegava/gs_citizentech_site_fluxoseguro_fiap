@@ -171,8 +171,9 @@ p::selection {
 
 /* Animação do bloco */
 .bloco-conteudo-sobre {
-  transition: transform 0.8s ease-in-out;
-  transition: box-shadow 0.3s ease;
+  transition:
+    transform 0.8s ease-in-out,
+    box-shadow 0.3s ease;
 }
 
 /* Aumentar o tamanho do bloco */
@@ -262,7 +263,7 @@ p::selection {
   height: 8px;
   background-color: var(--cor-destaque-azul-escuro);
   border-radius: 5px 5px 0 0;
-  z-index: 10;
+  z-index: var(--z-index-cards);
   transition: width 0.3s ease;
 }
 
