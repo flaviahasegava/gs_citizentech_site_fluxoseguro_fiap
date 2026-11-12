@@ -263,7 +263,7 @@ p::selection {
   height: 8px;
   background-color: var(--cor-destaque-azul-escuro);
   border-radius: 5px 5px 0 0;
-  z-index: 10;
+  z-index: var(--z-index-cards);
   transition: width 0.3s ease;
 }
 
