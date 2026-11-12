@@ -167,7 +167,67 @@ p::selection {
   animation-delay: 1.4s;
 }
 
+/* Animação seção: Tecnologia ------------------------------*/
+/* Tecnologia: transição entre texto e imagens */
+
+.texto-tecnologia,
+.imagens-tecnologia {
+  transition:
+    opacity .3s ease,
+    transform .3s ease;
+}
+
+/* Imagens começam escondidas */
+.imagens-tecnologia {
+  opacity: 0;
+  transform: scale(.9);
+}
+
+/* Mouse: mostra as imagens enquanto estiver sobre a esfera */
+@media (hover: hover) {
+  .esfera-tecnologia:hover {
+    z-index: 2;
+  }
+
+  .esfera-tecnologia:hover .texto-tecnologia {
+    opacity: 0;
+    transform: scale(.95);
+  }
+
+  .esfera-tecnologia:hover .imagens-tecnologia {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Teclado: permite revelar as imagens usando Tab */
+.esfera-tecnologia:focus-visible {
+  z-index: 2;
+  outline: 3px solid var(--cor-destaque-branco);
+  outline-offset: 5px;
+}
+
+.esfera-tecnologia:focus-visible .texto-tecnologia {
+  opacity: 0;
+  transform: scale(.95);
+}
+
+.esfera-tecnologia:focus-visible .imagens-tecnologia {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Respeita a preferência por movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  .texto-tecnologia,
+  .imagens-tecnologia {
+    transition: none;
+  }
+}
+
 /* Animação Seção: Sobre ------------------------------*/
+
+
 
 /* Animação do bloco */
 .bloco-conteudo-sobre {
