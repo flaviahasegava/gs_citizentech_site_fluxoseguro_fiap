@@ -32,7 +32,7 @@
   /* z-index */
   --z-index-header: 999; /* Menu */
   --z-index-cards: 1; /* Cards */
-  --z-index-efeitos: 10;  /* Efeitos */
+  --z-index-efeitos: 10; /* Efeitos */
 }
 
 /* Html ------------------------------ */
@@ -75,24 +75,29 @@ body {
   background-color: var(--background-menu-nav);
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 30px 220px;
   box-shadow: 0px 1px 10px;
 }
 
+.container-menu nav {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
 #menu-items {
   display: flex;
-  align-items: center;
-  gap: 50px;
-  font-weight: 500;
+  gap: 80px;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 3px;
+  list-style: none;
 }
 
 .menu-links {
   color: var(--cor-destaque-branco);
-  text-decoration: none;
   padding-bottom: 5px;
+  text-decoration: none;
 }
 
 /* Menu Fixo */
@@ -103,8 +108,37 @@ header {
   z-index: var(--z-index-header);
 }
 
-/* SEÇÃO HERO */
+/* Caixa do Submenu */
+.menu-caixa {
+  position: relative;
+}
 
+/* Caixa do Menu Sobre */
+.menu-sobre {
+  position: absolute;
+  list-style: none;
+  width: 300px;
+  margin-top: 16px;
+  background-color: var(--background-menu-nav);
+  border-radius: 6px;
+  z-index: var(--z-index-header);
+  border: 1px solid var(--background-escuro);
+}
+
+/* Links do Submenu */
+.menu-sobre li a {
+  display: block;
+  padding: 20px 45px;
+  color: var(--cor-destaque-branco);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.menu-caixa ul li {
+  border: 1px solid var(--background-escuro);
+}
+
+/* Seção: Hero ------------------------------ */
 #hero {
   position: relative;
   min-height: 100vh;
@@ -262,6 +296,8 @@ header {
   font-size: 26px;
   color: var(--cor-texto-escuro);
 }
+
+/* Seção: Protótipo ------------------------------ */
 
 /* Seção: Tecnologia ------------------------------ */
 
