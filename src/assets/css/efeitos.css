@@ -285,3 +285,39 @@ p::selection {
 .card-objetivos:hover .titulo-objetivos {
   transform: scale(1.18);
 }
+
+/* Animação Seção: Público-Alvo ------------------------------*/
+
+/* Transição */
+.card-publico {
+  transition: transform 0.4s ease;
+}
+
+.img-publico {
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
+}
+
+/* Ao passar o mouse */
+.card-publico:hover {
+  transform: translateY(-10px);
+}
+
+.card-publico:hover .img-publico {
+  transform: scale(1.06);
+  filter: drop-shadow(0px 8px 12px rgba(6, 223, 251, 0.2));
+}
+
+/* Animação Seção: Benefícios ------------------------------*/
+.card-beneficio {
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.card-beneficio:hover {
+  transform: translateX(40px);
+  box-shadow: 0px 8px 20px rgba(6, 51, 95, 0.2);
+}
