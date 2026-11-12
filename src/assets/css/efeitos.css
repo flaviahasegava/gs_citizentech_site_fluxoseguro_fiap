@@ -206,6 +206,99 @@ p::selection {
   font-weight: 800;
 }
 
+/* Animação Seção: Tecnologias --------------------------- */
+
+/* Efeitos: Tecnologia ------------------------------ */
+
+.bolha-tecnologia {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    z-index 0.35s ease;
+}
+
+.conteudo-bolha {
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.hover-bolha {
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+  transform: scale(0.9);
+}
+
+/* AUMENTO AO PASSAR O MOUSE */
+.bolha-tecnologia:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 28px rgba(6, 223, 251, 0.35);
+  z-index: 10;
+}
+
+/* ESCONDE TEXTO */
+.bolha-tecnologia:hover .conteudo-bolha {
+  opacity: 0;
+  transform: scale(0.92);
+}
+
+/* MOSTRA IMAGENS */
+.bolha-tecnologia:hover .hover-bolha {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ENTRADA SUAVE */
+@keyframes entradaBolhas {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bolha-1 {
+  animation: entradaBolhas 0.7s ease-out;
+}
+
+.bolha-2 {
+  animation: entradaBolhas 0.9s ease-out;
+}
+
+.bolha-3 {
+  animation: entradaBolhas 1.1s ease-out;
+}
+
+.bolha-4 {
+  animation: entradaBolhas 1.3s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bolha-tecnologia,
+  .conteudo-bolha,
+  .hover-bolha,
+  .bolha-1,
+  .bolha-2,
+  .bolha-3,
+  .bolha-4 {
+    transition: none;
+    animation: none;
+  }
+
+  .bolha-tecnologia:hover {
+    transform: none;
+  }
+
+  .hover-bolha {
+    transform: none;
+  }
+}
+
 /* Animação Seção: Objetivos ------------------------------*/
 /* Tamanho inicial do card e altura */
 .card-objetivos {
