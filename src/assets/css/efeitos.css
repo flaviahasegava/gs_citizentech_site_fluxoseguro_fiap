@@ -171,8 +171,9 @@ p::selection {
 
 /* Animação do bloco */
 .bloco-conteudo-sobre {
-  transition: transform 0.8s ease-in-out;
-  transition: box-shadow 0.3s ease;
+  transition:
+    transform 0.8s ease-in-out,
+    box-shadow 0.3s ease;
 }
 
 /* Aumentar o tamanho do bloco */
@@ -249,10 +250,6 @@ p::selection {
   opacity: 1;
   transform: translateX(0);
   transition-delay: 0.4s;
-}
-
-.card-objetivos {
-  position: relative;
 }
 
 /* Card objetivos transição linha após passar o mouse */
