@@ -516,7 +516,74 @@ header {
 }
 
 /* Seção: Equipe ------------------------------ */
+
+/* Icone do LinkedIn */
 .icon-linkedin {
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  margin-right: 5px;
+}
+
+.site-linkedin {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.site-linkedin a {
+  color: var(--cor-texto-escuro);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+#equipe {
+  background-color: var(--background-escuro);
+  padding: 120px 100px;
+}
+
+/* Título */
+.container-equipe h3 {
+  color: var(--cor-subtitulo);
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-align: left;
+}
+
+.container-equipe h1 {
+  color: var(--cor-destaque-branco);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 60px;
+  font-weight: 700;
+  text-align: left;
+  margin-top: 16px;
+  margin-bottom: 55px;
+}
+
+.container-equipe h2 {
+  text-transform: uppercase;
+  color: var(--cor-titulo-principal);
+  font-size: 32px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
+/* Cards */
+.card-equipe {
+  background-color: var(--background-claro);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.grid-cards-equipe {
+  display: flex;
+  gap: 28px;
+}
+
+.grid-cards-equipe a {
+  text-decoration: none;
 }

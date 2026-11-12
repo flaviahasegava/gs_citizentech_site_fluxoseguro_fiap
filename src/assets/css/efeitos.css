@@ -32,7 +32,7 @@ p::selection {
 }
 
 .logo a:visited {
-  color: var(--cor-destaque-claro);
+  color: var(--cor-destaque-branco);
 }
 
 
@@ -248,14 +248,14 @@ p::selection {
 /* Animação Seção: Objetivos ------------------------------*/
 /* Tamanho inicial do card e altura */
 .card-objetivos {
-  height: 180px;
-  transition: height 0.6s ease;
+  max-height: 180px;
+  transition: max-height 0.6s ease;
   overflow: hidden;
 }
 
 /* Ao passar o mouse aumenta de tamanho */
 .card-objetivos:hover {
-  height: 800px;
+  max-height: 800px;
 }
 
 /* Animação inicial dos parágrafos */
@@ -365,3 +365,7 @@ p::selection {
   transform: translateX(40px);
   box-shadow: 0px 8px 20px rgba(6, 51, 95, 0.2);
 }
+
+
+
+/* Seção: Equipe ------------------------------*/
