@@ -206,15 +206,12 @@ p::selection {
   font-weight: 800;
 }
 
-/* Animação Seção: Tecnologias --------------------------- */
-
-
-
 /* Animação Seção: Objetivos ------------------------------*/
 /* Tamanho inicial do card e altura */
 .card-objetivos {
   height: 180px;
   transition: height 0.6s ease;
+  overflow: hidden;
 }
 
 /* Ao passar o mouse aumenta de tamanho */
@@ -255,10 +252,6 @@ p::selection {
   transition-delay: 0.4s;
 }
 
-.card-objetivos {
-  position: relative;
-}
-
 /* Card objetivos transição linha após passar o mouse */
 .card-objetivos::before {
   content: "";
@@ -287,5 +280,45 @@ p::selection {
 }
 
 .card-objetivos:hover .titulo-objetivos {
-  transform: scale(1.18);
+  transform: scale(1.05);
+}
+
+/* Animação Seção: Público-Alvo ------------------------------*/
+
+/* Transição */
+.card-publico {
+  transition: transform 0.4s ease;
+}
+
+.img-publico {
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
+}
+
+/* Ao passar o mouse */
+.card-publico:hover {
+  transform: translateY(-10px);
+}
+
+.card-publico:hover .img-publico {
+  transform: scale(1.06);
+  filter: drop-shadow(0px 8px 12px rgba(6, 223, 251, 0.2));
+}
+
+.card-publico:hover h2 {
+  color: var(--cor-destaque-agua);
+}
+
+/* Animação Seção: Benefícios ------------------------------*/
+.card-beneficio {
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.card-beneficio:hover {
+  transform: translateX(40px);
+  box-shadow: 0px 8px 20px rgba(6, 51, 95, 0.2);
 }
