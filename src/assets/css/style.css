@@ -611,11 +611,9 @@ header {
 
 /* Foto */
 .foto-equipe {
-  width: 180px;
-  height: 180px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
-  border: 2px solid var(--cor-destaque-azul-escuro);
-  background-image: url("#");
 }
 
 .destaque-core {
