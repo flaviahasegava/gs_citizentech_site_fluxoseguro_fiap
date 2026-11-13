@@ -68,6 +68,8 @@
           <li><a href="#beneficios" class="menu-links">Benefícios</a></li>
 
           <li><a href="#equipe" class="menu-links">A Equipe</a></li>
+
+          <li><a href="#contato" class="menu-links">Contate-nos</a></li>
         </ul>
       </nav>
     </div>
@@ -342,6 +344,95 @@
       </div>
     </section>
 
+
+
+    <!-- Seção: Contato e Sugestão ################################# -->
+    <section id="contato">
+      <div class="container-formularios">
+
+        <!-- Contato -->
+        <div class="card-contato">
+          <h3>Entre em contato</h3>
+          <h1>Contrate a nossa solução</h1>
+          <form method="post"> <!-- Evitar que os dados do usuário apareça na url -->
+            <fieldset>
+              <!-- Formulário -->
+              <legend>Preencha os dados com o seu contato</legend>
+
+              <!-- Nome -->
+              <label for="contato-nome">Nome:</label>
+              <input class="input-formularios" type="text" id="contato-nome" name="nome" placeholder="Digite seu nome..." required>
+
+              <!-- E-mail -->
+              <label for="contato-email">E-mail:</label>
+              <input class="input-formularios" type="email" id="contato-email" name="email" placeholder="Digite seu e-mail..." required>
+
+              <!-- Assunto -->
+              <label for="contato-assunto">Qual o seu assunto?</label>
+              <select class="input-formularios" id="contato-assunto" name="assunto" required>
+                <option value="" disabled selected>Selecione o assunto...</option>
+                <option value="contratar">Quero contratar a solução</option>
+                <option value="parceria">Proposta de parceria</option>
+                <option value="duvida">Tenho uma dúvida</option>
+                <option value="outro">Outro</option>
+              </select>
+
+              <!-- Mensagem -->
+              <label for="contato-mensagem">Deixe sua mensagem:</label>
+              <textarea class="input-formularios" id="contato-mensagem" name="mensagem" placeholder="Conte como podemos ajudar..." required></textarea>
+
+              <!-- Botões -->
+              <div class="botoes-formularios">
+                <button class="botao-limpar" type="reset">Limpar formulário</button>
+                <button class="botao-enviar" type="submit">Enviar mensagem</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+
+
+        <!-- Sugestão -->
+        <div class="card-sugestao">
+          <h3>Sua opinião importa</h3>
+          <h1>Deixe sua sugestão aqui</h1>
+          <form method="post">
+            <fieldset>
+              <!-- Formulário -->
+              <legend>O que podemos melhorar?</legend>
+
+              <!-- Nome -->
+              <label for="sugestao-nome">Nome:</label>
+              <input class="input-formularios" type="text" id="sugestao-nome" name="nome" placeholder="Digite seu nome..." required>
+
+              <!-- E-mail -->
+              <label for="sugestao-email">E-mail:</label>
+              <input class="input-formularios" type="email" id="sugestao-email" name="email" placeholder="Digite seu e-mail..." required>
+
+              <!-- Tipo da Sugestão -->
+              <label>Tipo de sugestão:</label>
+              <input class="radio" type="radio" name="sugestao-tipo" value="melhoria" required>Melhoria
+              <input class="radio" type="radio" name="sugestao-tipo" value="problema" required>Problema
+
+              <!-- Mensagem -->
+              <label for="sugestao-mensagem">Deixe sua sugestão:</label>
+              <textarea class="input-formularios" id="sugestao-mensagem" name="mensagem" placeholder="Escreva aqui sua sugestão..." required></textarea>
+
+              <!-- Notificar a resposta no e-mail -->
+              <div class="sugestao-checkbox">
+                <input type="checkbox" id="notificacao-email">
+                <label for="notificacao-email">Quero receber a resposta no e-mail</label>
+              </div>
+
+              <!-- Botões -->
+              <div class="botoes-formularios">
+                <button class="botao-limpar" type="reset">Limpar formulário</button>
+                <button class="botao-enviar" type="submit">Enviar sugestão</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- Footer #################################-->
