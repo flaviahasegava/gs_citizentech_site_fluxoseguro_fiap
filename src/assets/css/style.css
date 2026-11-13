@@ -12,6 +12,7 @@
   --cor-destaque-branco: #fbfbfd;
   --cor-destaque-agua: #06dffb;
   --cor-destaque-azul-escuro: #06335f;
+  --cor-destaque-azul-claro: rgb(222, 229, 236);
 
   /* Background Cores */
   --background-menu-nav: rgb(0, 0, 0, 0.9);
@@ -29,6 +30,10 @@
   --cor-selecionar-texto: #2262a1;
   --cor-background-selecionar-texto: #aad1f8;
 
+  /* Botão  */
+  --cor-background-botao-limpar: #e6e6e6;
+  --cor-hover-botao-limpar: #ff9e9e;
+
   /* z-index */
   --z-index-header: 999; /* Menu */
   --z-index-cards: 1; /* Cards */
@@ -42,7 +47,7 @@ html {
 
 /* Body ------------------------------ */
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: var(--background-escuro);
 }
 
@@ -612,4 +617,135 @@ header {
 
 .destaque-core {
   color: var(--cor-destaque-agua);
+}
+
+/* Seção: Contato e Sugestão ------------------------------ */
+#contato {
+  background-color: var(--background-claro);
+  padding: 120px 100px;
+}
+
+/* Formulários */
+.container-formularios {
+  display: flex;
+  gap: 90px;
+  align-items: stretch;
+}
+
+/* Título */
+.card-contato h3,
+.card-sugestao h3 {
+  color: var(--cor-subtitulo);
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.card-contato h1,
+.card-sugestao h1 {
+  color: var(--cor-titulo-principal);
+  font-size: 36px;
+  margin-top: 10px;
+  margin-bottom: 38px;
+  text-transform: uppercase;
+}
+
+/* Cards */
+.card-contato,
+.card-sugestao {
+  flex: 1;
+  background-color: var(--background-bloco);
+  padding: 60px;
+  border-radius: 12px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Fieldset */
+.card-contato fieldset,
+.card-sugestao fieldset {
+  border: 2px solid var(--cor-destaque-azul-claro);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* Legend */
+.card-contato legend,
+.card-sugestao legend {
+  color: var(--cor-titulo-principal);
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+/* Label */
+.card-contato label,
+.card-sugestao label {
+  display: flex;
+  color: var(--cor-titulo-principal);
+  font-weight: 800;
+  margin-top: 26px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+/* Input */
+.input-formularios {
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;
+  border: 2px solid var(--cor-destaque-azul-claro);
+  border-radius: 8px;
+}
+
+/* Radio */
+.sugestao-radio {
+  color: var(--cor-titulo-principal);
+  font-weight: 800;
+  margin-top: 26px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.radio {
+  margin: 6px 6px 0 14px;
+}
+
+/* Textarea */
+.card-contato textarea,
+.card-sugestao textarea {
+  height: 140px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+}
+
+/* Notificar e-mail checkbox */
+.sugestao-checkbox {
+  margin-top: 14px;
+}
+
+.sugestao-checkbox label {
+  display: inline-block;
+}
+
+/* Botões */
+.botoes-formularios button {
+  font-weight: 600;
+  margin-top: 20px;
+  margin-right: 12px;
+  border-radius: 8px;  
+  border: none;
+  cursor: pointer;
+}
+
+.botao-limpar {
+  color: var(--cor-destaque-azul-escuro);
+  background-color: var(--cor-background-botao-limpar);
+  font-size: 14px;
+  padding: 14px 20px;
+}
+
+.botao-enviar {
+  background-color: var(--cor-destaque-azul-escuro);
+  color: var(--cor-destaque-branco);
+  font-size: 16px;
+  padding: 14px 24px;
 }
