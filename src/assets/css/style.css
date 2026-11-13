@@ -89,6 +89,7 @@ body {
   justify-content: space-between;
   padding: 30px 220px;
   box-shadow: 0px 1px 10px;
+  align-items: center;
 }
 
 .container-menu nav {
@@ -108,7 +109,6 @@ body {
 
 .menu-links {
   color: var(--cor-destaque-branco);
-  padding-bottom: 5px;
   text-decoration: none;
 }
 
