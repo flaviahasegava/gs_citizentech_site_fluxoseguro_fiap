@@ -37,6 +37,10 @@
   --cor-background-botao-limpar: #e6e6e6;
   --cor-hover-botao-limpar: #ff9e9e;
 
+  /* Placeholder */
+  --cor-placeholder: #5b6c809c;
+  --cor-placeholder-focus: #7b8288;
+
   /* z-index */
   --z-index-header: 999; /* Menu */
   --z-index-cards: 1; /* Cards */

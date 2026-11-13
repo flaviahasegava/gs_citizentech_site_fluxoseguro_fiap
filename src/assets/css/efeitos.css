@@ -441,6 +441,16 @@ p::selection {
     transform 0.4s ease;
 }
 
+/* Placeholder e Textarea */
+input::placeholder, textarea::placeholder {
+  color: var(--cor-placeholder);
+  transition: color 0.4s ease;
+}
+
+input:focus::placeholder, textarea:focus::placeholder {
+  color: var(--cor-placeholder-focus);
+}
+
 
 
 /* Footer ------------------------------*/
