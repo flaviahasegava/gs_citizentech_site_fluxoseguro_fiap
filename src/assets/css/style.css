@@ -26,6 +26,9 @@
   --cor-texto-escuro: #001931;
   --cor-logo-fiap: #ed145b;
 
+  /* Linha Destaque */
+  --cor-linha-destaque: #454546;
+
   /* Selecionar Texto */
   --cor-selecionar-texto: #2262a1;
   --cor-background-selecionar-texto: #aad1f8;
@@ -47,7 +50,7 @@ html {
 
 /* Body ------------------------------ */
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: var(--background-escuro);
 }
 
@@ -713,7 +716,7 @@ header {
 .card-contato textarea,
 .card-sugestao textarea {
   height: 140px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 18px;
 }
 
@@ -731,7 +734,7 @@ header {
   font-weight: 600;
   margin-top: 20px;
   margin-right: 12px;
-  border-radius: 8px;  
+  border-radius: 8px;
   border: none;
   cursor: pointer;
 }
@@ -748,4 +751,101 @@ header {
   color: var(--cor-destaque-branco);
   font-size: 16px;
   padding: 14px 24px;
+}
+
+/* Footer ------------------------------ */
+footer {
+  background-color: var(--background-menu-nav);
+  color: var(--cor-destaque-branco);
+  padding: 30px 100px 20px;
+}
+
+.container-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  text-transform: uppercase;
+}
+
+/* Separador de cada item do footer */
+.linha-vertical {
+  background-color: var(--cor-destaque-branco);
+  width: 1px;
+  height: 18px;
+}
+
+/* Logo */
+footer .logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+}
+
+footer .logo img {
+  width: 25px;
+  height: 25px;
+}
+
+/* Equipe Core */
+.core {
+  color: var(--cor-destaque-agua);
+  font-weight: 800;
+}
+
+.logo-fiap {
+  color: var(--cor-logo-fiap);
+  font-weight: 800;
+}
+
+/* ODS */
+.footer-ods img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.footer-ods a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--cor-destaque-branco);
+  text-decoration: none;
+}
+
+/* Frase */
+.footer-frase {
+  max-width: 250px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+/* Menu Nav */
+.footer-menu {
+  display: flex;
+  justify-content: space-between;
+  color: var(--cor-destaque-branco);
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--cor-linha-destaque);
+}
+
+.footer-links a {
+  color: var(--cor-destaque-branco);
+  text-decoration: none;
+}
+
+.footer-links {
+  font-size: 14px;
+  display: flex;
+  gap: 38px;
+  list-style: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+#direitos {
+  text-align: right;
 }
