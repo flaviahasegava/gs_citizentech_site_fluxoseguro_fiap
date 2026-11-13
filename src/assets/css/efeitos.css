@@ -43,7 +43,7 @@ p::selection {
 /* Ao passar o mouse */
 .menu-links:hover {
   color: var(--cor-destaque-agua);
-  font-weight: bold;
+  font-weight: 800;
   transform: scale(1.06);
 }
 
