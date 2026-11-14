@@ -15,10 +15,9 @@ if (nome === "" || nome === null) {
 }
 
 // Estilização da mensagem na página principal
-let textoHome = document.getElementById("nomeUsuario"); 
+let textoHome = document.getElementById("nomeUsuario");
 
-textoHome.innerHTML = 
-`
+textoHome.innerHTML = `
   <span style="color: white;">
     Bem-vindo(a), 
   </span>
@@ -34,3 +33,52 @@ textoHome.style.margin = "0";
 textoHome.style.fontSize = "34px";
 textoHome.style.fontWeight = "700";
 textoHome.style.animation = "aparecer 0.8s ease forwards";
+
+
+
+
+// Formulários ==========================
+
+// Formulário Contato
+// A variável formularioContato recebe o elemento HTML que tem o id formularioContato
+let formularioContato = document.getElementById("formularioContato");
+
+// Verifica se o usuário clicou no botão enviar sem preencher tudo e mostra um alerta
+formularioContato.addEventListener("submit", function (enviar) {
+  // Cria as variáveis para receber os IDs e o valor de cada campo do formulário
+  let nome = document.getElementById("contato-nome").value; // Nome 
+  let email = document.getElementById("contato-email").value; // E-mail
+  let assunto = document.getElementById("contato-assunto").value; // Assunto
+  let mensagem = document.getElementById("contato-mensagem").value; // Mensagem
+
+  // Verifica se a pessoa digitou nos campos do formulário
+  if (nome === "" || email === "" || assunto === "" || mensagem === "") {
+    alert(`${nome}, alguns dados estão faltando. Por favor, preencha todos os dados!`);
+    enviar.preventDefault(); // Impede de enviar / Cancela
+
+  // Caso esteja tudo preenchido envia a mensagem de confirmação
+  } else {
+    alert(`Obrigado(a), ${nome}! A equipe Core recebeu sua mensagem. Entraremos em contato em breve.`)
+  }
+});
+
+// =======================================================================
+
+// Formulário Sugestão
+let formularioSugestao = document.getElementById("formularioSugestao");
+
+formularioSugestao.addEventListener("submit", function (enviar) {
+  let nome = document.getElementById("sugestao-nome").value;
+  let email = document.getElementById("sugestao-email").value;
+  let melhoria = document.getElementById("tipo-melhoria").checked;
+  let problema = document.getElementById("tipo-problema").checked;
+  let mensagem = document.getElementById("sugestao-mensagem").value;
+
+  if (nome === "" || email === "" || mensagem === "" || (melhoria === false && problema === false)) { // Melhoria e problema verifica se um ou outro está marcado
+    alert(`${nome}, alguns dados estão faltando. Por favor, preencha todos os dados!`);
+    enviar.preventDefault();
+
+  } else {
+    alert(`Obrigado(a), ${nome}! A equipe Core recebeu sua mensagem. Agradecemos a sua sugestão!`)
+  }
+});

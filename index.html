@@ -359,22 +359,22 @@
         <div class="card-contato">
           <h3>Entre em contato</h3>
           <h1>Contrate a nossa solução</h1>
-          <form method="post"> <!-- Evitar que os dados do usuário apareça na url -->
+          <form id="formularioContato" method="post"> <!-- Evitar que os dados do usuário apareça na url -->
             <fieldset>
               <!-- Formulário -->
               <legend>Preencha os dados com o seu contato</legend>
 
               <!-- Nome -->
               <label for="contato-nome">Nome:</label>
-              <input class="input-formularios" type="text" id="contato-nome" name="nome" placeholder="Digite seu nome..." required>
+              <input class="input-formularios" type="text" id="contato-nome" name="nome" placeholder="Digite seu nome...">
 
               <!-- E-mail -->
               <label for="contato-email">E-mail:</label>
-              <input class="input-formularios" type="email" id="contato-email" name="email" placeholder="Digite seu e-mail..." required>
+              <input class="input-formularios" type="email" id="contato-email" name="email" placeholder="Digite seu e-mail...">
 
               <!-- Assunto -->
               <label for="contato-assunto">Qual o seu assunto?</label>
-              <select class="input-formularios" id="contato-assunto" name="assunto" required>
+              <select class="input-formularios" id="contato-assunto" name="assunto">
                 <option value="" disabled selected>Selecione o assunto...</option>
                 <option value="contratar">Quero contratar a solução</option>
                 <option value="parceria">Proposta de parceria</option>
@@ -384,7 +384,7 @@
 
               <!-- Mensagem -->
               <label for="contato-mensagem">Deixe sua mensagem:</label>
-              <textarea class="input-formularios" id="contato-mensagem" name="mensagem" placeholder="Conte como podemos ajudar..." required></textarea>
+              <textarea class="input-formularios" id="contato-mensagem" name="mensagem" placeholder="Conte como podemos ajudar..."></textarea>
 
               <!-- Botões -->
               <div class="botoes-formularios">
@@ -400,27 +400,27 @@
         <div class="card-sugestao">
           <h3>Sua opinião importa</h3>
           <h1>Deixe sua sugestão aqui</h1>
-          <form method="post">
+          <form id="formularioSugestao" method="post">
             <fieldset>
               <!-- Formulário -->
               <legend>O que podemos melhorar?</legend>
 
               <!-- Nome -->
               <label for="sugestao-nome">Nome:</label>
-              <input class="input-formularios" type="text" id="sugestao-nome" name="nome" placeholder="Digite seu nome..." required>
+              <input class="input-formularios" type="text" id="sugestao-nome" name="nome" placeholder="Digite seu nome...">
 
               <!-- E-mail -->
               <label for="sugestao-email">E-mail:</label>
-              <input class="input-formularios" type="email" id="sugestao-email" name="email" placeholder="Digite seu e-mail..." required>
+              <input class="input-formularios" type="email" id="sugestao-email" name="email" placeholder="Digite seu e-mail...">
 
               <!-- Tipo da Sugestão -->
               <label>Tipo de sugestão:</label>
-              <input class="radio" type="radio" name="sugestao-tipo" value="melhoria" required>Melhoria
-              <input class="radio" type="radio" name="sugestao-tipo" value="problema" required>Problema
+              <input class="radio" id="tipo-melhoria" type="radio" name="sugestao-tipo" value="melhoria">Melhoria
+              <input class="radio" id="tipo-problema" type="radio" name="sugestao-tipo" value="problema">Problema
 
               <!-- Mensagem -->
               <label for="sugestao-mensagem">Deixe sua sugestão:</label>
-              <textarea class="input-formularios" id="sugestao-mensagem" name="mensagem" placeholder="Escreva aqui sua sugestão..." required></textarea>
+              <textarea class="input-formularios" id="sugestao-mensagem" name="mensagem" placeholder="Escreva aqui sua sugestão..."></textarea>
 
               <!-- Notificar a resposta no e-mail -->
               <div class="sugestao-checkbox">
