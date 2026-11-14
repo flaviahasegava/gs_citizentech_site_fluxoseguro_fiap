@@ -14,8 +14,11 @@ if (nome === "" || nome === null) {
   nome = prompt("Qual o seu nome?");
 }
 
-// Estilização da mensagem na página princiapl
-document.getElementById("nomeUsuario").innerHTML = `
+// Estilização da mensagem na página principal
+let textoHome = document.getElementById("nomeUsuario"); 
+
+textoHome.innerHTML = 
+`
   <span style="color: white;">
     Bem-vindo(a), 
   </span>
@@ -27,6 +30,7 @@ document.getElementById("nomeUsuario").innerHTML = `
   </span>
   `;
 
-document.getElementById("nomeUsuario").style.margin = "0";
-document.getElementById("nomeUsuario").style.fontSize = "34px";
-document.getElementById("nomeUsuario").style.fontWeight = "700";
+textoHome.style.margin = "0";
+textoHome.style.fontSize = "34px";
+textoHome.style.fontWeight = "700";
+textoHome.style.animation = "aparecer 0.8s ease forwards";
