@@ -82,3 +82,11 @@ formularioSugestao.addEventListener("submit", function (enviar) {
     alert(`Obrigado(a), ${nome}! A equipe Core recebeu sua mensagem. Agradecemos a sua sugestão!`)
   }
 });
+
+
+// Footer ==========================
+
+// Ano automático no footer
+// Variável para receber o ano atual
+let ano = document.getElementById("ano");
+ano.innerText = new Date().getFullYear(); // Adiciona o ano atual na variável ano / Date() pega os dados atuais do relógio do computador e getFullYear() serve pra mostrar apenas o ano
