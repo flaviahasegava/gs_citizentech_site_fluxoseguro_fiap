@@ -90,3 +90,50 @@ formularioSugestao.addEventListener("submit", function (enviar) {
 // Variável para receber o ano atual
 let ano = document.getElementById("ano");
 ano.innerText = new Date().getFullYear(); // Adiciona o ano atual na variável ano / Date() pega os dados atuais do relógio do computador e getFullYear() serve pra mostrar apenas o ano
+
+// SLIDESHOW
+
+(function () {
+    const imagens = [
+        "./src/assets/img/secao_prototipo/imagem1.png",
+        "./src/assets/img/secao_prototipo/imagem2.png",
+        "./src/assets/img/secao_prototipo/imagem3.png"
+    ];
+
+    const legendas = [
+        "Alagamentos urbanos",
+        "Tecnologia de monitoramento",
+        "Prevenção e segurança"
+    ];
+
+    let indice = 0;
+
+    const imagemSlide = document.getElementById("imagem-slideshow");
+    const legendaSlide = document.getElementById("legenda-slideshow");
+
+    function mostrarSlide() {
+        imagemSlide.src = imagens[indice];
+        legendaSlide.textContent = legendas[indice];
+    }
+
+    function proximoSlide() {
+        indice++;
+        if (indice >= imagens.length) {
+            indice = 0;
+        }
+        mostrarSlide();
+    }
+
+    function anteriorSlide() {
+        indice--;
+        if (indice < 0) {
+            indice = imagens.length - 1;
+        }
+        mostrarSlide();
+    }
+
+    document.getElementById("proximo").addEventListener("click", proximoSlide);
+    document.getElementById("anterior").addEventListener("click", anteriorSlide);
+
+    mostrarSlide();
+})();
