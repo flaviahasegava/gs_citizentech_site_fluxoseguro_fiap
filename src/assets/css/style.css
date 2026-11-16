@@ -818,6 +818,18 @@ header {
   padding: 14px 24px;
 }
 
+/* Campos obrigatórios */
+.obrigatorio {
+  color: #d33;
+  margin-left: 4px;
+}
+
+.aviso-obrigatorio {
+  font-size: 14px;
+  color: var(--cor-texto-escuro);
+  margin-top: 10px;
+}
+
 /* Footer ------------------------------ */
 footer {
   background-color: var(--background-menu-nav);

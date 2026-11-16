@@ -382,17 +382,18 @@
             <fieldset>
               <!-- Formulário -->
               <legend>Preencha os dados com o seu contato</legend>
+              <p class="aviso-obrigatorio"><span class="obrigatorio">*</span> Campos obrigatórios</p>
 
               <!-- Nome -->
-              <label for="contato-nome">Nome:</label>
+              <label for="contato-nome">Nome: <span class="obrigatorio">*</span></label>
               <input class="input-formularios" type="text" id="contato-nome" name="nome" placeholder="Digite seu nome...">
 
               <!-- E-mail -->
-              <label for="contato-email">E-mail:</label>
+              <label for="contato-email">E-mail: <span class="obrigatorio">*</span></label>
               <input class="input-formularios" type="email" id="contato-email" name="email" placeholder="Digite seu e-mail...">
 
               <!-- Assunto -->
-              <label for="contato-assunto">Qual o seu assunto?</label>
+              <label for="contato-assunto">Qual o seu assunto? <span class="obrigatorio">*</span></label>
               <select class="input-formularios" id="contato-assunto" name="assunto">
                 <option value="" disabled selected>Selecione o assunto...</option>
                 <option value="contratar">Quero contratar a solução</option>
@@ -402,13 +403,13 @@
               </select>
 
               <!-- Mensagem -->
-              <label for="contato-mensagem">Deixe sua mensagem:</label>
+              <label for="contato-mensagem">Deixe sua mensagem: <span class="obrigatorio">*</span></label>
               <textarea class="input-formularios" id="contato-mensagem" name="mensagem" placeholder="Conte como podemos ajudar..."></textarea>
 
               <!-- Botões -->
               <div class="botoes-formularios">
                 <button class="botao-limpar" type="reset">Limpar formulário</button>
-                <button class="botao-enviar" type="submit">Enviar mensagem</button>
+                <button class="botao-enviar" type="submit">Enviar contato</button>
               </div>
             </fieldset>
           </form>
@@ -423,17 +424,18 @@
             <fieldset>
               <!-- Formulário -->
               <legend>O que podemos melhorar?</legend>
+              <p class="aviso-obrigatorio"><span class="obrigatorio">*</span> Campos obrigatórios</p>
 
               <!-- Nome -->
-              <label for="sugestao-nome">Nome:</label>
+              <label for="sugestao-nome">Nome: <span class="obrigatorio">*</span></label>
               <input class="input-formularios" type="text" id="sugestao-nome" name="nome" placeholder="Digite seu nome...">
 
               <!-- E-mail -->
-              <label for="sugestao-email">E-mail:</label>
+              <label for="sugestao-email">E-mail: <span class="obrigatorio">*</span></label>
               <input class="input-formularios" type="email" id="sugestao-email" name="email" placeholder="Digite seu e-mail...">
 
               <!-- Tipo de Sugestão -->
-              <label>Tipo de sugestão:</label>
+              <label>Tipo de sugestão: <span class="obrigatorio">*</span></label>
               <div class="sugestao-radios">
                 <div class="opcao-radio">
                   <input class="radio" id="tipo-melhoria" type="radio" name="sugestao-tipo" value="melhoria">
@@ -447,7 +449,7 @@
               </div>
 
               <!-- Mensagem -->
-              <label for="sugestao-mensagem">Deixe sua sugestão:</label>
+              <label for="sugestao-mensagem">Deixe sua sugestão: <span class="obrigatorio">*</span></label>
               <textarea class="input-formularios" id="sugestao-mensagem" name="mensagem" placeholder="Escreva aqui sua sugestão..."></textarea>
 
               <!-- Notificar a resposta no e-mail -->
@@ -457,13 +459,6 @@
               </div>
 
               <!-- Botões -->
-               <!-- Limpar Contato -->
-              <div class="botoes-formularios">
-                <button class="botao-limpar" id="limpar-contato" type="button">Limpar formulário</button>
-                <button class="botao-enviar" type="submit">Enviar mensagem</button>
-              </div>
-
-              <!-- Limpar Sugestão -->
               <div class="botoes-formularios">
                 <button class="botao-limpar" id="limpar-sugestao" type="button">Limpar formulário</button>
                 <button class="botao-enviar" type="submit">Enviar sugestão</button>
