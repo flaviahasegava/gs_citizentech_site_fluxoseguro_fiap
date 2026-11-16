@@ -50,7 +50,7 @@ boasVindas();
 
 
 
-// SLIDESHOW
+// SLIDESHOW ==========================
 
 (function () {
   const imagens = [
@@ -59,41 +59,76 @@ boasVindas();
     "./src/assets/img/secao_prototipo/imagem3.png",
   ];
 
-  const legendas = [
-    "Alagamentos urbanos",
-    "Tecnologia de monitoramento",
-    "Prevenção e segurança",
+  const titulos = [
+    "ALAGAMENTOS URBANOS",
+    "TECNOLOGIA QUE MONITORA",
+    "PREVENÇÃO QUE SALVA VIDAS",
   ];
 
   let indice = 0;
 
   const imagemSlide = document.getElementById("imagem-slideshow");
-  const legendaSlide = document.getElementById("legenda-slideshow");
+  const tituloSlide = document.getElementById("titulo-slideshow");
+  const indicadores = document.getElementById("indicadores");
 
+  // Criar as bolinhas automaticamente
+  imagens.forEach(function (imagem, i) {
+    const bolinha = document.createElement("span");
+
+    bolinha.addEventListener("click", function () {
+      indice = i;
+      mostrarSlide();
+    });
+
+    indicadores.appendChild(bolinha);
+  });
+
+  // Atualizar imagem, título e bolinhas
   function mostrarSlide() {
     imagemSlide.src = imagens[indice];
-    legendaSlide.textContent = legendas[indice];
+
+    tituloSlide.textContent = titulos[indice];
+
+    // Atualizar bolinha ativa
+    const bolinhas = indicadores.querySelectorAll("span");
+
+    bolinhas.forEach(function (bolinha, i) {
+      bolinha.classList.remove("ativo");
+
+      if (i === indice) {
+        bolinha.classList.add("ativo");
+      }
+    });
   }
 
+  // Próxima imagem
   function proximoSlide() {
     indice++;
+
     if (indice >= imagens.length) {
       indice = 0;
     }
+
     mostrarSlide();
   }
 
+  // Imagem anterior
   function anteriorSlide() {
     indice--;
+
     if (indice < 0) {
       indice = imagens.length - 1;
     }
+
     mostrarSlide();
   }
 
+  // Eventos das setinhas
   document.getElementById("proximo").addEventListener("click", proximoSlide);
+
   document.getElementById("anterior").addEventListener("click", anteriorSlide);
 
+  // Exibir primeira imagem
   mostrarSlide();
 })();
 
@@ -151,7 +186,12 @@ formularioSugestao.addEventListener("submit", function (enviar) {
   let mensagem = document.getElementById("sugestao-mensagem").value.trim();
 
   // Verifica se o usuário deixou algum campo vazio
-  if (nome !== "" && email !== "" && mensagem !== "" && (melhoria || problema)) {
+  if (
+    nome !== "" &&
+    email !== "" &&
+    mensagem !== "" &&
+    (melhoria || problema)
+  ) {
     // Usuário preencheu tudo corretamente
     Swal.fire({
       theme: "dark",

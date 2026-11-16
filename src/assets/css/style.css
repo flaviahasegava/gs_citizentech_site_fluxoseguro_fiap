@@ -309,9 +309,105 @@ header {
   color: var(--cor-texto-escuro);
 }
 
+/* SLIDESHOW */
+
+.container-slideshow {
+  text-align: center;
+  color: white;
+  padding: 60px 20px;
+}
+
+.container-slideshow p {
+  margin-bottom: 25px;
+}
+
+.slideshow {
+  position: relative;
+  max-width: 650px;
+  margin: auto;
+}
+
+.slideshow img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+#titulo-slideshow {
+  font-family: "Montserrat", sans-serif;
+  color: #004b87;
+  font-size: 34px;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  letter-spacing: 2px;
+}
+
+.slideshow button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #06dffb;
+  color: #0b1220;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.slideshow button:hover {
+  background-color: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Bolinhas de navegação */
+.indicadores {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.indicadores span {
+  width: 10px;
+  height: 10px;
+  background-color: #777;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Bolinha da foto atual */
+.indicadores span.ativo {
+  background-color: #0c8faf;
+  transform: scale(1.3);
+}
+
+#anterior {
+  left: 15px;
+}
+
+#proximo {
+  right: 15px;
+}
+
+#legenda-slideshow {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+
+
 /* Seção: Protótipo ------------------------------ */
 
 /* Seção: Tecnologia ------------------------------ */
+
+
 
 /* Seção: Objetivos ------------------------------ */
 #objetivos {
@@ -464,61 +560,6 @@ header {
   font-size: 18px;
   letter-spacing: 2px;
   text-align: center;
-}
-
-/* SLIDESHOW */
-
-.container-slideshow {
-    text-align: center;
-    color: white;
-    padding: 60px 20px;
-}
-
-.container-slideshow h1 {
-    margin-bottom: 15px;
-    color: white;
-}
-
-.container-slideshow p {
-    margin-bottom: 25px;
-}
-
-.slideshow {
-    position: relative;
-    max-width: 650px;
-    margin: auto;
-}
-
-.slideshow img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-}
-
-.slideshow button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 12px 16px;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-}
-
-#anterior {
-    left: 15px;
-}
-
-#proximo {
-    right: 15px;
-}
-
-#legenda-slideshow {
-    margin-top: 15px;
-    font-weight: bold;
 }
 
 .container-beneficios h1 {
@@ -925,4 +966,237 @@ footer .logo img {
 
 #direitos {
   text-align: right;
+}
+
+/* ================= RESPONSIVIDADE ================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+fieldset {
+  min-width: 0;
+  /* evita o formulário estourar a largura no celular */
+}
+
+/* ---------- Notebook pequeno / tablet (até 1024px) ---------- */
+@media (max-width: 1024px) {
+  .grid-cards-objetivos,
+  .grid-cards,
+  .grid-cards-publico,
+  .grid-cards-equipe {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .container-formularios {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .card-contato,
+  .card-sugestao {
+    width: 100%;
+  }
+}
+
+/* ---------- Tablet (até 768px) ---------- */
+@media (max-width: 768px) {
+  main section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Menu: logo em cima, links embaixo quebrando linha */
+  header .container-menu {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 15px;
+  }
+
+  #menu-items {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 18px;
+    padding: 0;
+  }
+
+  /* Hero */
+  #hero h1 {
+    font-size: 38px;
+  }
+
+  #hero h2 {
+    font-size: 22px;
+  }
+
+  /* Títulos das seções */
+  main section h1 {
+    font-size: 28px;
+  }
+
+  /* Sobre */
+  .container-sobre {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  /* Slideshow */
+  #titulo-slideshow {
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+
+  .slideshow button {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+  }
+
+  /* Cards */
+  .grid-cards-objetivos,
+  .grid-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-cards-publico,
+  .grid-cards-equipe {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Formulários */
+  .input-formularios {
+    width: 100%;
+  }
+
+  .botoes-formularios {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .botoes-formularios button {
+    width: 100%;
+  }
+
+  /* Footer */
+  .container-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .linha-vertical {
+    display: none;
+  }
+
+  .footer-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 18px;
+    padding: 0;
+  }
+}
+
+/* ---------- Celular (até 480px) ---------- */
+@media (max-width: 480px) {
+  #hero h1 {
+    font-size: 32px;
+  }
+
+  #hero h2 {
+    font-size: 18px;
+  }
+
+  main section h1 {
+    font-size: 24px;
+  }
+
+  #titulo-slideshow {
+    font-size: 18px;
+  }
+
+  .grid-cards-publico,
+  .grid-cards-equipe {
+    grid-template-columns: 1fr;
+  }
+}
+/* ================= MENU: espaçamento e sem quebra de linha ================= */
+
+.container-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  /* espaço entre o logo e o menu */
+}
+
+.logo {
+  flex-shrink: 0;
+  /* o logo nunca é espremido */
+  white-space: nowrap;
+}
+
+#menu-items {
+  display: flex;
+  gap: 28px;
+  /* espaço entre os links */
+}
+
+.menu-links {
+  white-space: nowrap;
+  /* impede "O / PROJETO" de quebrar em duas linhas */
+}
+
+/* Telas médias: diminui um pouco para caber tudo */
+@media (max-width: 1100px) {
+  .container-menu {
+    gap: 20px;
+  }
+
+  #menu-items {
+    gap: 16px;
+  }
+
+  .menu-links {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+}
+
+/* Telas menores: logo em cima, links embaixo */
+@media (max-width: 900px) {
+  header .container-menu {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 15px;
+  }
+
+  #menu-items {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 18px;
+    padding: 0;
+  }
 }
