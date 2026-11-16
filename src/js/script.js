@@ -17,7 +17,8 @@ async function boasVindas() {
   const { value: nome } = await Swal.fire({
     theme: "dark",
     input: "text",
-    inputLabel: "Olá! Qual o seu nome?",
+    title: "Olá!",
+    text: "Qual o seu nome?",
     inputPlaceholder: "Digite o seu nome...",
     allowOutsideClick: false, // Não fecha clicando fora
     allowEscapeKey: false, // Não fecha com esc
