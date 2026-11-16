@@ -757,16 +757,24 @@ header {
 }
 
 /* Radio */
-.sugestao-radio {
-  color: var(--cor-titulo-principal);
-  font-weight: 800;
-  margin-top: 26px;
-  margin-bottom: 6px;
-  text-transform: uppercase;
+.sugestao-radios {
+  display: flex;
+  gap: 28px;
+  margin-top: 10px;
 }
 
-.radio {
-  margin: 6px 6px 0 14px;
+.opcao-radio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-sugestao .opcao-radio label {
+  margin: 0;
+}
+
+.opcao-radio .radio {
+  margin: 0;
 }
 
 /* Textarea */

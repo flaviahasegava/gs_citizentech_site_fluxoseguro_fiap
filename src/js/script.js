@@ -3,9 +3,11 @@
 // Exibição de entrada ==========================
 // Mensagem de boas-vindas (Entrada)
 async function boasVindas() {
-  await Swal.fire({ // await espera o usuário clicar em "Conhecer"
+  await Swal.fire({
+    // await espera o usuário clicar em "Conhecer"
     theme: "dark",
-    title: 'Bem-vindo(a) ao FLUXO<br><span style="color: #06dffb;"> SEGURO</span>!',  
+    title:
+      'Bem-vindo(a) ao FLUXO<br><span style="color: #06dffb;"> SEGURO</span>!',
     text: "Conheça como funciona o projeto feito para a Global Solution (CitizenTech) da FIAP.",
     confirmButtonColor: "#06335f",
     confirmButtonText: "Conhecer",
@@ -21,7 +23,8 @@ async function boasVindas() {
     allowEscapeKey: false, // Não fecha com esc
     confirmButtonColor: "#06335f",
     inputValidator: (valor) => {
-      if (valor.trim() === "") { // Se o valor estiver vazio é pedido o nome novamente / trim tira os espaços colocado no começo e final do nome
+      if (valor.trim() === "") {
+        // Se o valor estiver vazio é pedido o nome novamente / trim tira os espaços colocado no começo e final do nome
         return "Por favor, digite o seu nome!";
       }
     },
@@ -58,19 +61,29 @@ formularioContato.addEventListener("submit", function (enviar) {
   let assunto = document.getElementById("contato-assunto").value.trim(); // Assunto
   let mensagem = document.getElementById("contato-mensagem").value.trim(); // Mensagem
 
-  // Verifica se a pessoa digitou nos campos do formulário
-  if (nome === "" && email === "" && assunto === "" && mensagem === "") {
-    alert(
-      `${nome}, alguns dados estão faltando. Por favor, preencha todos os dados!`,
-    );
-    enviar.preventDefault(); // Impede de enviar / Cancela
+  // Verifica se o usuário deixou algum campo vazio
+  if (nome !== "" && email !== "" && assunto !== "" && mensagem !== "") {
+    // Usuário preencheu tudo corretamente
+    Swal.fire({
+      theme: "dark",
+      icon: "success",
+      title: `Obrigado(a), ${nome}!`,
+      text: "A equipe Core recebeu sua mensagem. Entraremos em contato em breve.",
+    });
 
-    // Caso esteja tudo preenchido envia a mensagem de confirmação
+    formularioContato.reset(); // Limpa os campos
+
+    // Campo vazio / Alerta de dados faltando
   } else {
-    alert(
-      `Obrigado(a), ${nome}! A equipe Core recebeu sua mensagem. Entraremos em contato em breve.`,
-    );
+    Swal.fire({
+      theme: "dark",
+      icon: "error",
+      title: "Dados faltando",
+      text: `${nome}, por favor, preencha todos os dados!`,
+    });
   }
+
+  enviar.preventDefault(); // preventDefault -> Não envia o formulário e não recarrega a página
 });
 
 // =======================================================================
@@ -85,26 +98,29 @@ formularioSugestao.addEventListener("submit", function (enviar) {
   let problema = document.getElementById("tipo-problema").checked;
   let mensagem = document.getElementById("sugestao-mensagem").value.trim();
 
-  if (
-    nome === "" &&
-    email === "" &&
-    mensagem === "" &&
-    melhoria === false &&
-    problema === false
-  ) {
-    // Melhoria e problema verifica se um ou outro está marcado
+  // Verifica se o usuário deixou algum campo vazio
+  if (nome !== "" && email !== "" && mensagem !== "" && (melhoria || problema)) {
+    // Usuário preencheu tudo corretamente
     Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "Something went wrong!",
-      footer: '<a href="#">Why do I have this issue?</a>',
+      theme: "dark",
+      icon: "success",
+      title: `Obrigado(a), ${nome}!`,
+      text: "A equipe Core recebeu sua mensagem. Entraremos em contato em breve.",
     });
-    enviar.preventDefault();
+
+    formularioContato.reset(); // Limpa os campos
+
+    // Campo vazio / Alerta de dados faltando
   } else {
-    alert(
-      `Obrigado(a), ${nome}! A equipe Core recebeu sua mensagem. Agradecemos a sua sugestão!`,
-    );
+    Swal.fire({
+      theme: "dark",
+      icon: "error",
+      title: "Dados faltando",
+      text: `${nome}, por favor, preencha todos os dados!`,
+    });
   }
+
+  enviar.preventDefault();
 });
 
 // Footer ==========================

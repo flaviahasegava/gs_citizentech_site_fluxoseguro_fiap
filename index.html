@@ -432,10 +432,19 @@
               <label for="sugestao-email">E-mail:</label>
               <input class="input-formularios" type="email" id="sugestao-email" name="email" placeholder="Digite seu e-mail...">
 
-              <!-- Tipo da Sugestão -->
+              <!-- Tipo de Sugestão -->
               <label>Tipo de sugestão:</label>
-              <input class="radio" id="tipo-melhoria" type="radio" name="sugestao-tipo" value="melhoria"><label for="tipo-melhoria">Melhoria</label>
-              <input class="radio" id="tipo-problema" type="radio" name="sugestao-tipo" value="problema"><label for="tipo-problema">Problema</label>
+              <div class="sugestao-radios">
+                <div class="opcao-radio">
+                  <input class="radio" id="tipo-melhoria" type="radio" name="sugestao-tipo" value="melhoria">
+                  <label for="tipo-melhoria">Melhoria</label>
+                </div>
+
+                <div class="opcao-radio">
+                  <input class="radio" id="tipo-problema" type="radio" name="sugestao-tipo" value="problema">
+                  <label for="tipo-problema">Problema</label>
+                </div>
+              </div>
 
               <!-- Mensagem -->
               <label for="sugestao-mensagem">Deixe sua sugestão:</label>
