@@ -1,41 +1,48 @@
 //  JAVASCRIPT
 
 // Exibição de entrada ==========================
-alert("-+-+-+-+- Bem-vindo(a) ao projeto Fluxo Seguro! -+-+-+-"); // Exibe a mensagem de boas-vindas
+// Mensagem de boas-vindas (Entrada)
+async function boasVindas() {
+  await Swal.fire({ // await espera o usuário clicar em "Conhecer"
+    theme: "dark",
+    title: 'Bem-vindo(a) ao FLUXO<br><span style="color: #06dffb;"> SEGURO</span>!',  
+    text: "Conheça como funciona o projeto feito para a Global Solution (CitizenTech) da FIAP.",
+    confirmButtonColor: "#06335f",
+    confirmButtonText: "Conhecer",
+  });
 
-// Perguntar o nome do usuário e adicionar na página principal
-let nome = prompt("Olá! Qual o seu nome?");
+  // Pergunta o nome do usuário e adiciona o nome em cima de "FLUXO SEGURO"
+  const { value: nome } = await Swal.fire({
+    theme: "dark",
+    input: "text",
+    inputLabel: "Olá! Qual o seu nome?",
+    inputPlaceholder: "Digite o seu nome...",
+    allowOutsideClick: false, // Não fecha clicando fora
+    allowEscapeKey: false, // Não fecha com esc
+    confirmButtonColor: "#06335f",
+    inputValidator: (valor) => {
+      if (valor.trim() === "") { // Se o valor estiver vazio é pedido o nome novamente / trim tira os espaços colocado no começo e final do nome
+        return "Por favor, digite o seu nome!";
+      }
+    },
+  });
 
-// Verifica se o usuário digitou o nome
-if (nome === "" || nome === null) {
-  alert("Por favor, digite o seu nome!");
+  // Estilização do nome do usuário na página principal
+  let textoHome = document.getElementById("nomeUsuario");
 
-  // Pede o nome novamente, caso o usuário não tenha digitado nada
-  nome = prompt("Qual o seu nome?");
-}
-
-// Estilização da mensagem na página principal
-let textoHome = document.getElementById("nomeUsuario");
-
-textoHome.innerHTML = `
-  <span style="color: white;">
-    Bem-vindo(a), 
-  </span>
-  <span style="color: #06dffb;">
-    ${nome}
-  </span>
-  <span style="color: white;">
-    ao
-  </span>
+  textoHome.innerHTML = `
+    <span style="color: white;">Bem-vindo(a), </span>
+    <span style="color: #06dffb;">${nome}</span>
+    <span style="color: #fff;"> ao</span>
   `;
 
-textoHome.style.margin = "0";
-textoHome.style.fontSize = "34px";
-textoHome.style.fontWeight = "700";
-textoHome.style.animation = "aparecer 0.8s ease forwards";
+  textoHome.style.margin = "0";
+  textoHome.style.fontSize = "34px";
+  textoHome.style.fontWeight = "700";
+  textoHome.style.animation = "aparecer 0.8s ease forwards";
+}
 
-
-
+boasVindas();
 
 // Formulários ==========================
 
@@ -52,13 +59,17 @@ formularioContato.addEventListener("submit", function (enviar) {
   let mensagem = document.getElementById("contato-mensagem").value.trim(); // Mensagem
 
   // Verifica se a pessoa digitou nos campos do formulário
-  if (nome === "" || email === "" || assunto === "" || mensagem === "") {
-    alert(`${nome}, alguns dados estão faltando. Por favor, preencha todos os dados!`);
+  if (nome === "" && email === "" && assunto === "" && mensagem === "") {
+    alert(
+      `${nome}, alguns dados estão faltando. Por favor, preencha todos os dados!`,
+    );
     enviar.preventDefault(); // Impede de enviar / Cancela
 
-  // Caso esteja tudo preenchido envia a mensagem de confirmação
+    // Caso esteja tudo preenchido envia a mensagem de confirmação
   } else {
-    alert(`Obrigado(a), ${nome}! A equipe Core recebeu sua mensagem. Entraremos em contato em breve.`)
+    alert(
+      `Obrigado(a), ${nome}! A equipe Core recebeu sua mensagem. Entraremos em contato em breve.`,
+    );
   }
 });
 
@@ -68,21 +79,33 @@ formularioContato.addEventListener("submit", function (enviar) {
 let formularioSugestao = document.getElementById("formularioSugestao");
 
 formularioSugestao.addEventListener("submit", function (enviar) {
-  let nome = document.getElementById("sugestao-nome").value;
-  let email = document.getElementById("sugestao-email").value;
+  let nome = document.getElementById("sugestao-nome").value.trim();
+  let email = document.getElementById("sugestao-email").value.trim();
   let melhoria = document.getElementById("tipo-melhoria").checked;
   let problema = document.getElementById("tipo-problema").checked;
-  let mensagem = document.getElementById("sugestao-mensagem").value;
+  let mensagem = document.getElementById("sugestao-mensagem").value.trim();
 
-  if (nome === "" || email === "" || mensagem === "" || (melhoria === false && problema === false)) { // Melhoria e problema verifica se um ou outro está marcado
-    alert(`${nome}, alguns dados estão faltando. Por favor, preencha todos os dados!`);
+  if (
+    nome === "" &&
+    email === "" &&
+    mensagem === "" &&
+    melhoria === false &&
+    problema === false
+  ) {
+    // Melhoria e problema verifica se um ou outro está marcado
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Something went wrong!",
+      footer: '<a href="#">Why do I have this issue?</a>',
+    });
     enviar.preventDefault();
-
   } else {
-    alert(`Obrigado(a), ${nome}! A equipe Core recebeu sua mensagem. Agradecemos a sua sugestão!`)
+    alert(
+      `Obrigado(a), ${nome}! A equipe Core recebeu sua mensagem. Agradecemos a sua sugestão!`,
+    );
   }
 });
-
 
 // Footer ==========================
 
@@ -94,46 +117,46 @@ ano.innerText = new Date().getFullYear(); // Adiciona o ano atual na variável a
 // SLIDESHOW
 
 (function () {
-    const imagens = [
-        "./src/assets/img/secao_prototipo/imagem1.png",
-        "./src/assets/img/secao_prototipo/imagem2.png",
-        "./src/assets/img/secao_prototipo/imagem3.png"
-    ];
+  const imagens = [
+    "./src/assets/img/secao_prototipo/imagem1.png",
+    "./src/assets/img/secao_prototipo/imagem2.png",
+    "./src/assets/img/secao_prototipo/imagem3.png",
+  ];
 
-    const legendas = [
-        "Alagamentos urbanos",
-        "Tecnologia de monitoramento",
-        "Prevenção e segurança"
-    ];
+  const legendas = [
+    "Alagamentos urbanos",
+    "Tecnologia de monitoramento",
+    "Prevenção e segurança",
+  ];
 
-    let indice = 0;
+  let indice = 0;
 
-    const imagemSlide = document.getElementById("imagem-slideshow");
-    const legendaSlide = document.getElementById("legenda-slideshow");
+  const imagemSlide = document.getElementById("imagem-slideshow");
+  const legendaSlide = document.getElementById("legenda-slideshow");
 
-    function mostrarSlide() {
-        imagemSlide.src = imagens[indice];
-        legendaSlide.textContent = legendas[indice];
+  function mostrarSlide() {
+    imagemSlide.src = imagens[indice];
+    legendaSlide.textContent = legendas[indice];
+  }
+
+  function proximoSlide() {
+    indice++;
+    if (indice >= imagens.length) {
+      indice = 0;
     }
-
-    function proximoSlide() {
-        indice++;
-        if (indice >= imagens.length) {
-            indice = 0;
-        }
-        mostrarSlide();
-    }
-
-    function anteriorSlide() {
-        indice--;
-        if (indice < 0) {
-            indice = imagens.length - 1;
-        }
-        mostrarSlide();
-    }
-
-    document.getElementById("proximo").addEventListener("click", proximoSlide);
-    document.getElementById("anterior").addEventListener("click", anteriorSlide);
-
     mostrarSlide();
+  }
+
+  function anteriorSlide() {
+    indice--;
+    if (indice < 0) {
+      indice = imagens.length - 1;
+    }
+    mostrarSlide();
+  }
+
+  document.getElementById("proximo").addEventListener("click", proximoSlide);
+  document.getElementById("anterior").addEventListener("click", anteriorSlide);
+
+  mostrarSlide();
 })();
