@@ -47,6 +47,57 @@ async function boasVindas() {
 
 boasVindas();
 
+
+
+// SLIDESHOW
+
+(function () {
+  const imagens = [
+    "./src/assets/img/secao_prototipo/imagem1.png",
+    "./src/assets/img/secao_prototipo/imagem2.png",
+    "./src/assets/img/secao_prototipo/imagem3.png",
+  ];
+
+  const legendas = [
+    "Alagamentos urbanos",
+    "Tecnologia de monitoramento",
+    "Prevenção e segurança",
+  ];
+
+  let indice = 0;
+
+  const imagemSlide = document.getElementById("imagem-slideshow");
+  const legendaSlide = document.getElementById("legenda-slideshow");
+
+  function mostrarSlide() {
+    imagemSlide.src = imagens[indice];
+    legendaSlide.textContent = legendas[indice];
+  }
+
+  function proximoSlide() {
+    indice++;
+    if (indice >= imagens.length) {
+      indice = 0;
+    }
+    mostrarSlide();
+  }
+
+  function anteriorSlide() {
+    indice--;
+    if (indice < 0) {
+      indice = imagens.length - 1;
+    }
+    mostrarSlide();
+  }
+
+  document.getElementById("proximo").addEventListener("click", proximoSlide);
+  document.getElementById("anterior").addEventListener("click", anteriorSlide);
+
+  mostrarSlide();
+})();
+
+
+
 // Formulários ==========================
 
 // Formulário Contato
@@ -123,56 +174,42 @@ formularioSugestao.addEventListener("submit", function (enviar) {
   enviar.preventDefault();
 });
 
+// ---------------------------------------------------
+
+// Limpar formulário (Evitar que o usuário clique sem querer no limpar)
+function confirmarLimpeza(formulario) {
+  formulario.addEventListener("reset", function (evento) {
+    // Ao confirmar no botão é deixado limpar
+    if (formulario.dataset.confirmado === "sim") {
+      formulario.dataset.confirmado = "nao";
+      return;
+    }
+
+    evento.preventDefault(); // Cancela a limpeza automática
+
+    Swal.fire({
+      title: "Tem certeza?",
+      text: "Todos os dados digitados serão apagados.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#06335f",
+      confirmButtonText: "Sim, quero limpar",
+      cancelButtonText: "Não",
+    }).then((resultado) => {
+      if (resultado.isConfirmed) {
+        formulario.dataset.confirmado = "sim";
+        formulario.reset();
+      }
+    });
+  });
+}
+
+confirmarLimpeza(formularioContato);
+confirmarLimpeza(formularioSugestao);
+
 // Footer ==========================
 
 // Ano automático no footer
 // Variável para receber o ano atual
 let ano = document.getElementById("ano");
 ano.innerText = new Date().getFullYear(); // Adiciona o ano atual na variável ano / Date() pega os dados atuais do relógio do computador e getFullYear() serve pra mostrar apenas o ano
-
-// SLIDESHOW
-
-(function () {
-  const imagens = [
-    "./src/assets/img/secao_prototipo/imagem1.png",
-    "./src/assets/img/secao_prototipo/imagem2.png",
-    "./src/assets/img/secao_prototipo/imagem3.png",
-  ];
-
-  const legendas = [
-    "Alagamentos urbanos",
-    "Tecnologia de monitoramento",
-    "Prevenção e segurança",
-  ];
-
-  let indice = 0;
-
-  const imagemSlide = document.getElementById("imagem-slideshow");
-  const legendaSlide = document.getElementById("legenda-slideshow");
-
-  function mostrarSlide() {
-    imagemSlide.src = imagens[indice];
-    legendaSlide.textContent = legendas[indice];
-  }
-
-  function proximoSlide() {
-    indice++;
-    if (indice >= imagens.length) {
-      indice = 0;
-    }
-    mostrarSlide();
-  }
-
-  function anteriorSlide() {
-    indice--;
-    if (indice < 0) {
-      indice = imagens.length - 1;
-    }
-    mostrarSlide();
-  }
-
-  document.getElementById("proximo").addEventListener("click", proximoSlide);
-  document.getElementById("anterior").addEventListener("click", anteriorSlide);
-
-  mostrarSlide();
-})();
