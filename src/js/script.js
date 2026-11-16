@@ -46,10 +46,10 @@ let formularioContato = document.getElementById("formularioContato");
 // Verifica se o usuário clicou no botão enviar sem preencher tudo e mostra um alerta
 formularioContato.addEventListener("submit", function (enviar) {
   // Cria as variáveis para receber os IDs e o valor de cada campo do formulário
-  let nome = document.getElementById("contato-nome").value; // Nome 
-  let email = document.getElementById("contato-email").value; // E-mail
-  let assunto = document.getElementById("contato-assunto").value; // Assunto
-  let mensagem = document.getElementById("contato-mensagem").value; // Mensagem
+  let nome = document.getElementById("contato-nome").value.trim(); // Nome
+  let email = document.getElementById("contato-email").value.trim(); // E-mail
+  let assunto = document.getElementById("contato-assunto").value.trim(); // Assunto
+  let mensagem = document.getElementById("contato-mensagem").value.trim(); // Mensagem
 
   // Verifica se a pessoa digitou nos campos do formulário
   if (nome === "" || email === "" || assunto === "" || mensagem === "") {
