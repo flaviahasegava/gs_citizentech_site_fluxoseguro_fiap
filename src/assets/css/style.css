@@ -334,14 +334,22 @@ header {
   border-radius: 15px;
 }
 #titulo-slideshow {
-  font-family: "Montserrat", sans-serif;
-  color: #004b87;
-  font-size: 34px;
-  font-weight: 800;
-  text-align: center;
   text-transform: uppercase;
-  margin-bottom: 25px;
+  letter-spacing: 4px;
+  font-size: 40px;
+  font-weight: 700;
+  margin: 16px;
+  color: var(--cor-destaque-branco);
+  text-align: center;
+}
+
+#sobre h3 {
+  text-transform: uppercase;
   letter-spacing: 2px;
+  font-size: 18px;
+  color: var(--cor-subtitulo);
+  text-align: center;
+  margin-top: 120px;
 }
 
 .slideshow button {
@@ -354,7 +362,7 @@ header {
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  background-color: #06dffb;
+  background-color: #8cd4fd;
   color: #0b1220;
   font-size: 16px;
   transition: 0.3s;
@@ -384,7 +392,7 @@ header {
 
 /* Bolinha da foto atual */
 .indicadores span.ativo {
-  background-color: #0c8faf;
+  background-color: #5ad2f0;
   transform: scale(1.3);
 }
 

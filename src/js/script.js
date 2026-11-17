@@ -48,8 +48,6 @@ async function boasVindas() {
 
 boasVindas();
 
-
-
 // SLIDESHOW ==========================
 
 (function () {
@@ -70,6 +68,14 @@ boasVindas();
   const imagemSlide = document.getElementById("imagem-slideshow");
   const tituloSlide = document.getElementById("titulo-slideshow");
   const indicadores = document.getElementById("indicadores");
+  const botaoProximo = document.getElementById("proximo");
+  const botaoAnterior = document.getElementById("anterior");
+
+  // Se faltar algum elemento no HTML, sai do slideshow sem quebrar o resto do script
+  if (!imagemSlide || !tituloSlide || !indicadores || !botaoProximo || !botaoAnterior) {
+    console.warn("Slideshow: algum elemento não foi encontrado no HTML.");
+    return;
+  }
 
   // Criar as bolinhas automaticamente
   imagens.forEach(function (imagem, i) {
@@ -86,18 +92,12 @@ boasVindas();
   // Atualizar imagem, título e bolinhas
   function mostrarSlide() {
     imagemSlide.src = imagens[indice];
-
     tituloSlide.textContent = titulos[indice];
 
-    // Atualizar bolinha ativa
     const bolinhas = indicadores.querySelectorAll("span");
 
     bolinhas.forEach(function (bolinha, i) {
-      bolinha.classList.remove("ativo");
-
-      if (i === indice) {
-        bolinha.classList.add("ativo");
-      }
+      bolinha.classList.toggle("ativo", i === indice);
     });
   }
 
@@ -124,15 +124,12 @@ boasVindas();
   }
 
   // Eventos das setinhas
-  document.getElementById("proximo").addEventListener("click", proximoSlide);
-
-  document.getElementById("anterior").addEventListener("click", anteriorSlide);
+  botaoProximo.addEventListener("click", proximoSlide);
+  botaoAnterior.addEventListener("click", anteriorSlide);
 
   // Exibir primeira imagem
   mostrarSlide();
 })();
-
-
 
 // Formulários ==========================
 
@@ -142,6 +139,9 @@ let formularioContato = document.getElementById("formularioContato");
 
 // Verifica se o usuário clicou no botão enviar sem preencher tudo e mostra um alerta
 formularioContato.addEventListener("submit", function (enviar) {
+
+  enviar.preventDefault(); // preventDefault -> Não envia o formulário e não recarrega a página
+
   // Cria as variáveis para receber os IDs e o valor de cada campo do formulário
   let nome = document.getElementById("contato-nome").value.trim(); // Nome
   let email = document.getElementById("contato-email").value.trim(); // E-mail
@@ -169,8 +169,6 @@ formularioContato.addEventListener("submit", function (enviar) {
       text: `${nome}, por favor, preencha todos os dados!`,
     });
   }
-
-  enviar.preventDefault(); // preventDefault -> Não envia o formulário e não recarrega a página
 });
 
 // =======================================================================
@@ -179,6 +177,9 @@ formularioContato.addEventListener("submit", function (enviar) {
 let formularioSugestao = document.getElementById("formularioSugestao");
 
 formularioSugestao.addEventListener("submit", function (enviar) {
+
+  enviar.preventDefault();
+
   let nome = document.getElementById("sugestao-nome").value.trim();
   let email = document.getElementById("sugestao-email").value.trim();
   let melhoria = document.getElementById("tipo-melhoria").checked;
@@ -211,8 +212,6 @@ formularioSugestao.addEventListener("submit", function (enviar) {
       text: `${nome}, por favor, preencha todos os dados!`,
     });
   }
-
-  enviar.preventDefault();
 });
 
 // ---------------------------------------------------

@@ -14,11 +14,18 @@
 }
 
 /* Links ------------------------------ */
-.logo a:visited,
-.logo a:active,
 .menu-links,
 .menu-links:visited,
-.menu-links:active {
+.menu-links:active,
+.menu-links:focus {
+  color: var(--cor-destaque-branco);
+}
+
+.logo a,
+.logo a:visited,
+.logo a:hover,
+.logo a:active,
+.logo a:focus {
   color: var(--cor-destaque-branco);
 }
 
