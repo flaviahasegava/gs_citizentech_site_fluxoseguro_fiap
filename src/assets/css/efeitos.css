@@ -13,6 +13,15 @@
   }
 }
 
+/* Links ------------------------------ */
+.logo a:visited,
+.logo a:active,
+.menu-links,
+.menu-links:visited,
+.menu-links:active {
+  color: var(--cor-destaque-branco);
+}
+
 /* Geral ------------------------------*/
 p::selection {
   color: var(--cor-selecionar-texto);
@@ -29,9 +38,7 @@ p::selection {
   transform: scale(1.06);
 }
 
-.logo a:visited {
-  color: var(--cor-destaque-branco);
-}
+
 
 /* Menu ------------------------------*/
 .menu-links {

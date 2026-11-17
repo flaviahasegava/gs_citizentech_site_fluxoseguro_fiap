@@ -41,6 +41,18 @@ Oferecer aos usuários uma forma simples e acessível de conhecer o projeto Flux
 - **Contate-nos**
 
 
+
+## ⚙️ Funcionalidades em JavaScript
+- **Mensagem de boas-vindas:** ao abrir o site, um popup apresenta o projeto.
+- **Nome do usuário:** popup para perguntar o nome do usuário, não aceita o campo vazio e exibe o nome na página inicial.
+- **Slideshow dos alagamentos:** navegação entre as imagens de alagamentos por setas e bolinhas.
+- **Formulário de contato:** valida se todos os campos foram preenchidos e mostra um alerta de sucesso ou de dados faltando, sem recarregar a página.
+- **Formulário de sugestão:** funciona como o de contato e exige também a escolha do tipo (Melhoria ou Problema).
+- **Confirmação ao limpar:** antes de apagar os dados de um formulário, é pedido uma confirmação.
+- **Ano automático no rodapé:** o ano é atualizado sozinho com a data do computador.
+
+
+
 ## 🛠️ Tecnologias utilizadas
 - **HTML**
 - **CSS**

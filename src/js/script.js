@@ -1,39 +1,136 @@
 //  JAVASCRIPT
 
 // Exibição de entrada ==========================
-alert("-+-+-+-+- Bem-vindo(a) ao projeto Fluxo Seguro! -+-+-+-"); // Exibe a mensagem de boas-vindas
+// Mensagem de boas-vindas (Entrada)
+async function boasVindas() {
+  await Swal.fire({
+    // await espera o usuário clicar em "Conhecer"
+    theme: "dark",
+    title:
+      'Bem-vindo(a) ao FLUXO<br><span style="color: #06dffb;"> SEGURO</span>!',
+    text: "Conheça como funciona o projeto feito para a Global Solution (CitizenTech) da FIAP.",
+    confirmButtonColor: "#06335f",
+    confirmButtonText: "Conhecer",
+  });
 
-// Perguntar o nome do usuário e adicionar na página principal
-let nome = prompt("Olá! Qual o seu nome?");
+  // Pergunta o nome do usuário e adiciona o nome em cima de "FLUXO SEGURO"
+  const { value: nome } = await Swal.fire({
+    theme: "dark",
+    input: "text",
+    title: "Olá!",
+    text: "Qual o seu nome?",
+    inputPlaceholder: "Digite o seu nome...",
+    allowOutsideClick: false, // Não fecha clicando fora
+    allowEscapeKey: false, // Não fecha com esc
+    confirmButtonColor: "#06335f",
+    inputValidator: (valor) => {
+      if (valor.trim() === "") {
+        // Se o valor estiver vazio é pedido o nome novamente / trim tira os espaços colocado no começo e final do nome
+        return "Por favor, digite o seu nome!";
+      }
+    },
+  });
 
-// Verifica se o usuário digitou o nome
-if (nome === "" || nome === null) {
-  alert("Por favor, digite o seu nome!");
+  // Estilização do nome do usuário na página principal
+  let textoHome = document.getElementById("nomeUsuario");
 
-  // Pede o nome novamente, caso o usuário não tenha digitado nada
-  nome = prompt("Qual o seu nome?");
-}
-
-// Estilização da mensagem na página principal
-let textoHome = document.getElementById("nomeUsuario");
-
-textoHome.innerHTML = `
-  <span style="color: white;">
-    Bem-vindo(a), 
-  </span>
-  <span style="color: #06dffb;">
-    ${nome}
-  </span>
-  <span style="color: white;">
-    ao
-  </span>
+  textoHome.innerHTML = `
+    <span style="color: white;">Bem-vindo(a), </span>
+    <span style="color: #06dffb;">${nome}</span>
+    <span style="color: #fff;"> ao</span>
   `;
 
-textoHome.style.margin = "0";
-textoHome.style.fontSize = "34px";
-textoHome.style.fontWeight = "700";
-textoHome.style.animation = "aparecer 0.8s ease forwards";
+  textoHome.style.margin = "0";
+  textoHome.style.fontSize = "34px";
+  textoHome.style.fontWeight = "700";
+  textoHome.style.animation = "aparecer 0.8s ease forwards";
+}
 
+boasVindas();
+
+
+
+// SLIDESHOW ==========================
+
+(function () {
+  const imagens = [
+    "./src/assets/img/secao_prototipo/imagem1.png",
+    "./src/assets/img/secao_prototipo/imagem2.png",
+    "./src/assets/img/secao_prototipo/imagem3.png",
+  ];
+
+  const titulos = [
+    "ALAGAMENTOS URBANOS",
+    "TECNOLOGIA QUE MONITORA",
+    "PREVENÇÃO QUE SALVA VIDAS",
+  ];
+
+  let indice = 0;
+
+  const imagemSlide = document.getElementById("imagem-slideshow");
+  const tituloSlide = document.getElementById("titulo-slideshow");
+  const indicadores = document.getElementById("indicadores");
+
+  // Criar as bolinhas automaticamente
+  imagens.forEach(function (imagem, i) {
+    const bolinha = document.createElement("span");
+
+    bolinha.addEventListener("click", function () {
+      indice = i;
+      mostrarSlide();
+    });
+
+    indicadores.appendChild(bolinha);
+  });
+
+  // Atualizar imagem, título e bolinhas
+  function mostrarSlide() {
+    imagemSlide.src = imagens[indice];
+
+    tituloSlide.textContent = titulos[indice];
+
+    // Atualizar bolinha ativa
+    const bolinhas = indicadores.querySelectorAll("span");
+
+    bolinhas.forEach(function (bolinha, i) {
+      bolinha.classList.remove("ativo");
+
+      if (i === indice) {
+        bolinha.classList.add("ativo");
+      }
+    });
+  }
+
+  // Próxima imagem
+  function proximoSlide() {
+    indice++;
+
+    if (indice >= imagens.length) {
+      indice = 0;
+    }
+
+    mostrarSlide();
+  }
+
+  // Imagem anterior
+  function anteriorSlide() {
+    indice--;
+
+    if (indice < 0) {
+      indice = imagens.length - 1;
+    }
+
+    mostrarSlide();
+  }
+
+  // Eventos das setinhas
+  document.getElementById("proximo").addEventListener("click", proximoSlide);
+
+  document.getElementById("anterior").addEventListener("click", anteriorSlide);
+
+  // Exibir primeira imagem
+  mostrarSlide();
+})();
 
 
 
@@ -51,15 +148,29 @@ formularioContato.addEventListener("submit", function (enviar) {
   let assunto = document.getElementById("contato-assunto").value.trim(); // Assunto
   let mensagem = document.getElementById("contato-mensagem").value.trim(); // Mensagem
 
-  // Verifica se a pessoa digitou nos campos do formulário
-  if (nome === "" || email === "" || assunto === "" || mensagem === "") {
-    alert(`${nome}, alguns dados estão faltando. Por favor, preencha todos os dados!`);
-    enviar.preventDefault(); // Impede de enviar / Cancela
+  // Verifica se o usuário deixou algum campo vazio
+  if (nome !== "" && email !== "" && assunto !== "" && mensagem !== "") {
+    // Usuário preencheu tudo corretamente
+    Swal.fire({
+      theme: "dark",
+      icon: "success",
+      title: `Obrigado(a), ${nome}!`,
+      text: "A equipe Core recebeu sua mensagem. Entraremos em contato em breve.",
+    });
 
-  // Caso esteja tudo preenchido envia a mensagem de confirmação
+    formularioContato.reset(); // Limpa os campos
+
+    // Campo vazio / Alerta de dados faltando
   } else {
-    alert(`Obrigado(a), ${nome}! A equipe Core recebeu sua mensagem. Entraremos em contato em breve.`)
+    Swal.fire({
+      theme: "dark",
+      icon: "error",
+      title: "Dados faltando",
+      text: `${nome}, por favor, preencha todos os dados!`,
+    });
   }
+
+  enviar.preventDefault(); // preventDefault -> Não envia o formulário e não recarrega a página
 });
 
 // =======================================================================
@@ -68,21 +179,74 @@ formularioContato.addEventListener("submit", function (enviar) {
 let formularioSugestao = document.getElementById("formularioSugestao");
 
 formularioSugestao.addEventListener("submit", function (enviar) {
-  let nome = document.getElementById("sugestao-nome").value;
-  let email = document.getElementById("sugestao-email").value;
+  let nome = document.getElementById("sugestao-nome").value.trim();
+  let email = document.getElementById("sugestao-email").value.trim();
   let melhoria = document.getElementById("tipo-melhoria").checked;
   let problema = document.getElementById("tipo-problema").checked;
-  let mensagem = document.getElementById("sugestao-mensagem").value;
+  let mensagem = document.getElementById("sugestao-mensagem").value.trim();
 
-  if (nome === "" || email === "" || mensagem === "" || (melhoria === false && problema === false)) { // Melhoria e problema verifica se um ou outro está marcado
-    alert(`${nome}, alguns dados estão faltando. Por favor, preencha todos os dados!`);
-    enviar.preventDefault();
+  // Verifica se o usuário deixou algum campo vazio
+  if (
+    nome !== "" &&
+    email !== "" &&
+    mensagem !== "" &&
+    (melhoria || problema)
+  ) {
+    // Usuário preencheu tudo corretamente
+    Swal.fire({
+      theme: "dark",
+      icon: "success",
+      title: `Obrigado(a), ${nome}!`,
+      text: "A equipe Core recebeu sua mensagem. Entraremos em contato em breve.",
+    });
 
+    formularioSugestao.reset(); // Limpa os campos
+
+    // Campo vazio / Alerta de dados faltando
   } else {
-    alert(`Obrigado(a), ${nome}! A equipe Core recebeu sua mensagem. Agradecemos a sua sugestão!`)
+    Swal.fire({
+      theme: "dark",
+      icon: "error",
+      title: "Dados faltando",
+      text: `${nome}, por favor, preencha todos os dados!`,
+    });
   }
+
+  enviar.preventDefault();
 });
 
+// ---------------------------------------------------
+
+// Limpar formulário (Evitar que o usuário clique sem querer no limpar)
+function confirmarLimpeza(formulario) {
+  formulario.addEventListener("reset", function (evento) {
+    // Ao confirmar no botão é deixado limpar
+    if (formulario.dataset.confirmado === "sim") {
+      formulario.dataset.confirmado = "nao";
+      return;
+    }
+
+    evento.preventDefault(); // Cancela a limpeza automática
+
+    Swal.fire({
+      title: "Tem certeza?",
+      text: "Todos os dados digitados serão apagados.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#06335f",
+      confirmButtonText: "Sim, quero limpar",
+      cancelButtonText: "Não",
+    }).then((resultado) => {
+      if (resultado.isConfirmed) {
+        formulario.dataset.confirmado = "sim";
+        formulario.reset();
+      }
+    });
+  });
+}
+
+confirmarLimpeza(formularioContato);
+confirmarLimpeza(formularioSugestao);
 
 // Footer ==========================
 
@@ -90,50 +254,3 @@ formularioSugestao.addEventListener("submit", function (enviar) {
 // Variável para receber o ano atual
 let ano = document.getElementById("ano");
 ano.innerText = new Date().getFullYear(); // Adiciona o ano atual na variável ano / Date() pega os dados atuais do relógio do computador e getFullYear() serve pra mostrar apenas o ano
-
-// SLIDESHOW
-
-(function () {
-    const imagens = [
-        "./src/assets/img/secao_prototipo/imagem1.png",
-        "./src/assets/img/secao_prototipo/imagem2.png",
-        "./src/assets/img/secao_prototipo/imagem3.png"
-    ];
-
-    const legendas = [
-        "Alagamentos urbanos",
-        "Tecnologia de monitoramento",
-        "Prevenção e segurança"
-    ];
-
-    let indice = 0;
-
-    const imagemSlide = document.getElementById("imagem-slideshow");
-    const legendaSlide = document.getElementById("legenda-slideshow");
-
-    function mostrarSlide() {
-        imagemSlide.src = imagens[indice];
-        legendaSlide.textContent = legendas[indice];
-    }
-
-    function proximoSlide() {
-        indice++;
-        if (indice >= imagens.length) {
-            indice = 0;
-        }
-        mostrarSlide();
-    }
-
-    function anteriorSlide() {
-        indice--;
-        if (indice < 0) {
-            indice = imagens.length - 1;
-        }
-        mostrarSlide();
-    }
-
-    document.getElementById("proximo").addEventListener("click", proximoSlide);
-    document.getElementById("anterior").addEventListener("click", anteriorSlide);
-
-    mostrarSlide();
-})();
