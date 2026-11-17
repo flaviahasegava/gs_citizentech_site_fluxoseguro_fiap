@@ -131,7 +131,7 @@ boasVindas();
   mostrarSlide();
 })();
 
-// Formulários ==========================
+
 
 // Formulários ==========================
 
@@ -158,6 +158,7 @@ formularioContato.addEventListener("submit", function (enviar) {
       icon: "success",
       title: `Obrigado(a), ${nome}!`,
       text: "A equipe Core recebeu sua mensagem. Entraremos em contato em breve.",
+      confirmButtonColor: "#1f5d9b"
     });
 
     formularioContato.reset(); // Limpa os campos
@@ -169,6 +170,7 @@ formularioContato.addEventListener("submit", function (enviar) {
       icon: "error",
       title: "Dados faltando",
       text: `${nome}, por favor, preencha todos os dados!`,
+      confirmButtonColor: "#1f5d9b"
     });
   }
 });
@@ -201,6 +203,7 @@ formularioSugestao.addEventListener("submit", function (enviar) {
       icon: "success",
       title: `Obrigado(a), ${nome}!`,
       text: "A equipe Core recebeu sua mensagem. Entraremos em contato em breve.",
+      confirmButtonColor: "#1f5d9b"
     });
 
     formularioSugestao.reset(); // Limpa os campos
@@ -212,6 +215,7 @@ formularioSugestao.addEventListener("submit", function (enviar) {
       icon: "error",
       title: "Dados faltando",
       text: `${nome}, por favor, preencha todos os dados!`,
+      confirmButtonColor: "#1f5d9b"
     });
   }
 });
@@ -234,7 +238,7 @@ function confirmarLimpeza(formulario) {
       text: "Todos os dados digitados serão apagados.",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#06335f",
+      confirmButtonColor: "#1f5d9b",
       confirmButtonText: "Sim, quero limpar",
       cancelButtonText: "Não",
     }).then((resultado) => {
