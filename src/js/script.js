@@ -9,7 +9,7 @@ async function boasVindas() {
     title:
       'Bem-vindo(a) ao FLUXO<br><span style="color: #06dffb;"> SEGURO</span>!',
     text: "Conheça como funciona o projeto feito para a Global Solution (CitizenTech) da FIAP.",
-    confirmButtonColor: "#06335f",
+    confirmButtonColor: "#1f5d9b",
     confirmButtonText: "Conhecer",
   });
 
@@ -22,7 +22,7 @@ async function boasVindas() {
     inputPlaceholder: "Digite o seu nome...",
     allowOutsideClick: false, // Não fecha clicando fora
     allowEscapeKey: false, // Não fecha com esc
-    confirmButtonColor: "#06335f",
+    confirmButtonColor: "#1f5d9b",
     inputValidator: (valor) => {
       if (valor.trim() === "") {
         // Se o valor estiver vazio é pedido o nome novamente / trim tira os espaços colocado no começo e final do nome
