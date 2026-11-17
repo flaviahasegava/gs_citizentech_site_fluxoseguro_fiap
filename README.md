@@ -29,7 +29,7 @@ Oferecer aos usuários uma forma simples e acessível de conhecer o projeto Flux
 
 ## 💻 Repositório
 - **GitHub:** 🔗[Acessar o repositório](https://github.com/flaviahasegava/gs_citizentech_site_fluxoseguro_fiap)
-- **GitHub Pages:** 🔗[Acessar o site](#)
+- **GitHub Pages:** 🔗[Acessar o site](https://flaviahasegava.github.io/gs_citizentech_site_fluxoseguro_fiap/)
 
 
 ## 📦 Conteúdos
@@ -41,7 +41,6 @@ Oferecer aos usuários uma forma simples e acessível de conhecer o projeto Flux
 - **Contate-nos**
 
 
-
 ## ⚙️ Funcionalidades em JavaScript
 - **Mensagem de boas-vindas:** ao abrir o site, um popup apresenta o projeto.
 - **Nome do usuário:** popup para perguntar o nome do usuário, não aceita o campo vazio e exibe o nome na página inicial.
@@ -50,7 +49,6 @@ Oferecer aos usuários uma forma simples e acessível de conhecer o projeto Flux
 - **Formulário de sugestão:** funciona como o de contato e exige também a escolha do tipo (Melhoria ou Problema).
 - **Confirmação ao limpar:** antes de apagar os dados de um formulário, é pedido uma confirmação.
 - **Ano automático no rodapé:** o ano é atualizado sozinho com a data do computador.
-
 
 
 ## 🛠️ Tecnologias utilizadas
