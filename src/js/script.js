@@ -211,6 +211,7 @@ formularioSugestao.addEventListener("submit", function (enviar) {
       icon: "error",
       title: "Dados faltando",
       text: `${nome}, por favor, preencha todos os dados!`,
+      confirmButtonColor: "#06335f"
     });
   }
 });
