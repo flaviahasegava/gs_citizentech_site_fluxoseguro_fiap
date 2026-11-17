@@ -413,7 +413,107 @@ header {
 
 /* Seção: Protótipo ------------------------------ */
 
+
 /* Seção: Tecnologia ------------------------------ */
+#tecnologia {
+  background-color: var(--background-escuro);
+  padding: 120px 100px;
+}
+
+.container-tecnologia {
+  text-align: center;
+}
+
+/* Títulos */
+.container-tecnologia h3 {
+  color: var(--cor-subtitulo);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 18px;
+}
+
+.container-tecnologia h1 {
+  color: var(--cor-destaque-branco);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 60px;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+/* Descrição */
+.container-tecnologia p {
+  color: var(--cor-destaque-branco);
+  font-size: 22px;
+  line-height: 1.5;
+  margin-bottom: 50px;
+}
+
+/* Esferas */
+.esferas-tecnologia {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.esferas-tecnologia img {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Texto pequeno acima do carrossel */
+.container-tecnologia .texto-carrossel {
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+/* Área visível do carrossel */
+.carrossel-tecnologia {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+/* Imagens lado a lado */
+.imagens-tecnologia {
+  display: flex;
+}
+
+/* Cada imagem ocupa toda a largura do carrossel */
+.imagens-tecnologia img {
+  width: 100%;
+  height: 350px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  #tecnologia {
+    padding: 60px 20px;
+  }
+
+  .container-tecnologia h1 {
+    font-size: 32px;
+  }
+
+  .container-tecnologia p {
+    font-size: 18px;
+  }
+
+  .container-tecnologia .texto-carrossel {
+    font-size: 16px;
+  }
+
+  .imagens-tecnologia img {
+    height: 250px;
+  }
+}
 
 
 
