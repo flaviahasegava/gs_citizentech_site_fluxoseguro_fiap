@@ -200,7 +200,7 @@ formularioSugestao.addEventListener("submit", function (enviar) {
       text: "A equipe Core recebeu sua mensagem. Entraremos em contato em breve.",
     });
 
-    formularioContato.reset(); // Limpa os campos
+    formularioSugestao.reset(); // Limpa os campos
 
     // Campo vazio / Alerta de dados faltando
   } else {
