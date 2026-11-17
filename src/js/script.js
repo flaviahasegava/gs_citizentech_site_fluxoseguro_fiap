@@ -133,6 +133,8 @@ boasVindas();
 
 // Formulários ==========================
 
+// Formulários ==========================
+
 // Formulário Contato
 // A variável formularioContato recebe o elemento HTML que tem o id formularioContato
 let formularioContato = document.getElementById("formularioContato");
@@ -167,7 +169,6 @@ formularioContato.addEventListener("submit", function (enviar) {
       icon: "error",
       title: "Dados faltando",
       text: `${nome}, por favor, preencha todos os dados!`,
-      confirmButtonColor: "#06335f"
     });
   }
 });
@@ -220,14 +221,14 @@ formularioSugestao.addEventListener("submit", function (enviar) {
 
 // Limpar formulário (Evitar que o usuário clique sem querer no limpar)
 function confirmarLimpeza(formulario) {
-  formulario.addEventListener("reset", function (evento) {
-    // Ao confirmar no botão é deixado limpar
-    if (formulario.dataset.confirmado === "sim") {
-      formulario.dataset.confirmado = "nao";
-      return;
-    }
+  
+  // Pega o botão de limpar que está dentro do formulário
+  const botaoLimpar = formulario.querySelector('button[type="reset"]');
 
-    evento.preventDefault(); // Cancela a limpeza automática
+  // Agora escuta o clique do mouse no botão, e não o evento "reset" do formulário
+  botaoLimpar.addEventListener("click", function (evento) {
+    
+    evento.preventDefault(); // Cancela a limpeza automática do botão
 
     Swal.fire({
       title: "Tem certeza?",
@@ -239,8 +240,7 @@ function confirmarLimpeza(formulario) {
       cancelButtonText: "Não",
     }).then((resultado) => {
       if (resultado.isConfirmed) {
-        formulario.dataset.confirmado = "sim";
-        formulario.reset();
+        formulario.reset(); // Só limpa se o usuário clicar em "Sim"
       }
     });
   });
