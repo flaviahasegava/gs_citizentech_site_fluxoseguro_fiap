@@ -42,11 +42,16 @@
   --cor-placeholder-focus: #7b8288;
 
   /* z-index */
-  --z-index-header: 999; /* Menu */
-  --z-index-cards: 1; /* Cards */
-  --z-index-efeitos: 10; /* Efeitos */
-  --z-index-hero: 2; /* Conteúdo Hero */
-  --z-index-botao: 3; /* Botão Hero */
+  --z-index-header: 999;
+  /* Menu */
+  --z-index-cards: 1;
+  /* Cards */
+  --z-index-efeitos: 10;
+  /* Efeitos */
+  --z-index-hero: 2;
+  /* Conteúdo Hero */
+  --z-index-botao: 3;
+  /* Botão Hero */
 }
 
 /* HTML ------------------------------ */
@@ -84,29 +89,52 @@ body {
   text-decoration: none;
 }
 
-/* Menu ------------------------------ */
+/* MENU PRINCIPAL -  */
+
 .container-menu {
   background-color: var(--background-menu-nav);
   display: flex;
   justify-content: space-between;
-  padding: 30px 220px;
-  box-shadow: 0px 1px 10px;
   align-items: center;
+
+  /* Espaçamento adaptável */
+  padding: 25px clamp(25px, 6vw, 100px);
+
+  gap: 35px;
+
+  box-shadow: 0px 1px 10px;
+}
+/* Logo */
+.container-menu .logo {
+  flex-shrink: 0;
+}
+.container-menu .logo a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .container-menu nav {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   flex: 1;
+  min-width: 0;
 }
 
 #menu-items {
   display: flex;
-  gap: 80px;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: clamp(16px, 2.5vw, 36px);
+
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   list-style: none;
+  white-space: nowrap;
 }
 
 .menu-links {
@@ -157,13 +185,11 @@ header {
   position: relative;
   min-height: 100vh;
   background-image:
-    linear-gradient(
-      90deg,
+    linear-gradient(90deg,
       rgba(0, 0, 0, 0.75) 0%,
       rgba(0, 0, 0, 0.55) 40%,
       rgba(0, 0, 0, 0.25) 50%,
-      rgba(0, 0, 0, 0) 75%
-    ),
+      rgba(0, 0, 0, 0) 75%),
     url("../img/background-fluxo_seguro.png");
 
   background-size: cover;
@@ -321,8 +347,9 @@ header {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 15px;
+  border-radius: 100px;
 }
+
 #titulo-slideshow {
   text-transform: uppercase;
   letter-spacing: 4px;
@@ -718,6 +745,85 @@ header {
   object-fit: contain;
   border-radius: 50%;
   margin-bottom: 20px;
+}
+
+
+/* Computadores */
+.container-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 25px clamp(25px, 6vw, 100px);
+}
+
+.container-menu .logo {
+  flex-shrink: 0;
+}
+
+.container-menu .logo a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.container-menu nav {
+  flex: 1;
+  min-width: 0;
+}
+
+#menu-items {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 20px 30px;
+}
+
+#menu-items li {
+  flex-shrink: 0;
+}
+
+/* Notebooks e telas menores */
+@media (max-width: 1100px) {
+
+  .container-menu {
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 25px;
+    gap: 20px;
+  }
+
+  .container-menu nav {
+    width: 100%;
+  }
+
+  #menu-items {
+    justify-content: center;
+    gap: 15px 25px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+
+  .container-menu {
+    padding: 18px 12px;
+  }
+
+  #menu-items {
+    gap: 12px 18px;
+  }
+
+  .menu-links {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
 }
 
 /* Seção: Protótipo ------------------------------ */
@@ -1541,4 +1647,3 @@ fieldset {
     font-size: 12px;
   }
 }
-
