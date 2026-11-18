@@ -45,6 +45,8 @@
   --z-index-header: 999; /* Menu */
   --z-index-cards: 1; /* Cards */
   --z-index-efeitos: 10; /* Efeitos */
+  --z-index-hero: 2; /* Conteúdo Hero */
+  --z-index-botao: 3; /* Botão Hero */
 }
 
 /* HTML ------------------------------ */
@@ -172,6 +174,8 @@ header {
 
 .container-hero {
   margin-top: 32px;
+  position: relative;
+  z-index: var(--z-index-hero);
 }
 
 .link-externo {
@@ -243,26 +247,12 @@ header {
 
   border: 1px solid var(--cor-destaque-branco);
   border-radius: 10px;
+
+  position: relative;
+  z-index: --z-index-botao;
 }
 
-/* RESPONSIVIDADE */
-@media (max-width: 768px) {
-  #hero {
-    padding: 60px 6%;
-  }
 
-  .hero-texto h1 {
-    font-size: 36px;
-  }
-
-  .hero-texto h2 {
-    font-size: 23px;
-  }
-
-  .hero-texto p {
-    font-size: 14px;
-  }
-}
 
 /* Seção: Sobre ------------------------------ */
 #sobre {
@@ -334,14 +324,22 @@ header {
   border-radius: 15px;
 }
 #titulo-slideshow {
-  font-family: "Montserrat", sans-serif;
-  color: #004b87;
-  font-size: 34px;
-  font-weight: 800;
-  text-align: center;
   text-transform: uppercase;
-  margin-bottom: 25px;
+  letter-spacing: 4px;
+  font-size: 40px;
+  font-weight: 700;
+  margin: 16px;
+  color: var(--cor-destaque-branco);
+  text-align: center;
+}
+
+#sobre h3 {
+  text-transform: uppercase;
   letter-spacing: 2px;
+  font-size: 18px;
+  color: var(--cor-subtitulo);
+  text-align: center;
+  margin-top: 120px;
 }
 
 .slideshow button {
@@ -354,7 +352,7 @@ header {
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  background-color: #06dffb;
+  background-color: #8cd4fd;
   color: #0b1220;
   font-size: 16px;
   transition: 0.3s;
@@ -384,7 +382,7 @@ header {
 
 /* Bolinha da foto atual */
 .indicadores span.ativo {
-  background-color: #0c8faf;
+  background-color: #5ad2f0;
   transform: scale(1.3);
 }
 
@@ -404,6 +402,7 @@ header {
 
 
 /* Seção: Protótipo ------------------------------ */
+
 
 
 /* Seção: Tecnologia ------------------------------ */
@@ -506,8 +505,6 @@ header {
     height: 250px;
   }
 }
-
-
 
 /* Seção: Objetivos ------------------------------ */
 #objetivos {
@@ -1042,6 +1039,8 @@ header {
 /* Cards */
 .card-contato,
 .card-sugestao {
+  display: flex;
+  flex-direction: column;
   flex: 1;
   background-color: var(--background-bloco);
   padding: 60px;
@@ -1055,6 +1054,7 @@ header {
   border: 2px solid var(--cor-destaque-azul-claro);
   border-radius: 8px;
   padding: 20px;
+  flex: 1;
 }
 
 /* Legend */
@@ -1117,11 +1117,13 @@ header {
 
 /* Notificar e-mail checkbox */
 .sugestao-checkbox {
-  margin-top: 14px;
+  margin-top: 12px;
 }
 
 .sugestao-checkbox label {
   display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /* Botões */
@@ -1257,13 +1259,7 @@ footer .logo img {
   text-align: right;
 }
 
-/* ================= RESPONSIVIDADE ================= */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+/* Responsividade ------------------------------ */
 
 img {
   max-width: 100%;
@@ -1272,100 +1268,175 @@ img {
 
 fieldset {
   min-width: 0;
-  /* evita o formulário estourar a largura no celular */
 }
 
-/* ---------- Notebook pequeno / tablet (até 1024px) ---------- */
+/* Notebook e telas médias 1024p */
 @media (max-width: 1024px) {
-  .grid-cards-objetivos,
-  .grid-cards,
-  .grid-cards-publico,
-  .grid-cards-equipe {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  .container-menu {
+    padding: 20px 40px;
     gap: 20px;
   }
 
+  #menu-items {
+    gap: 20px;
+  }
+
+  #sobre,
+  #objetivos,
+  #beneficios,
+  #equipe,
+  #contato,
+  #tecnologia,
+  #publico-alvo {
+    padding: 80px 40px;
+  }
+
+  .grid-cards-objetivos,
+  .grid-cards-publico,
+  .grid-cards-equipe {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 30px 0;
+  }
+
   .container-formularios {
-    display: flex;
     flex-direction: column;
     gap: 30px;
   }
 
-  .card-contato,
-  .card-sugestao {
-    width: 100%;
+  .card-objetivos {
+    padding: 30px;
+  }
+
+  .card-objetivos p {
+    font-size: 24px;
+  }
+
+  .container-footer {
+    flex-wrap: wrap;
   }
 }
 
-/* ---------- Tablet (até 768px) ---------- */
+/* Tablet e celular 768p */
 @media (max-width: 768px) {
-  main section {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  /* Menu: logo em cima, links embaixo quebrando linha */
-  header .container-menu {
+  .container-menu {
     flex-direction: column;
-    gap: 10px;
-    padding: 10px 15px;
+    padding: 15px;
+    gap: 15px;
   }
 
   #menu-items {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px 18px;
-    padding: 0;
+    gap: 12px 20px;
   }
 
-  /* Hero */
-  #hero h1 {
-    font-size: 38px;
-  }
-
-  #hero h2 {
-    font-size: 22px;
-  }
-
-  /* Títulos das seções */
-  main section h1 {
-    font-size: 28px;
-  }
-
-  /* Sobre */
-  .container-sobre {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  /* Slideshow */
-  #titulo-slideshow {
-    font-size: 22px;
+  .menu-links {
+    font-size: 12px;
     letter-spacing: 1px;
   }
 
-  .slideshow button {
-    width: 34px;
-    height: 34px;
-    font-size: 14px;
+  .menu-sobre {
+    width: 220px;
   }
 
-  /* Cards */
+  #hero {
+    min-height: auto;
+    padding: 80px 30px;
+    background-position: center;
+  }
+
+  .hero-texto h1 {
+    font-size: 42px;
+  }
+
+  .hero-texto h2 {
+    font-size: 26px;
+  }
+
+  .hero-texto p {
+    font-size: 18px;
+  }
+
+  #sobre,
+  #objetivos,
+  #beneficios,
+  #equipe,
+  #contato,
+  #tecnologia,
+  #publico-alvo {
+    padding: 60px 25px;
+  }
+
+  .container-sobre {
+    flex-direction: column;
+  }
+
+  .bloco-conteudo-sobre {
+    margin: 0;
+    padding: 30px;
+  }
+
+  .bloco-conteudo-sobre h1 {
+    font-size: 28px;
+  }
+
+  .bloco-conteudo-sobre p {
+    font-size: 18px;
+  }
+
+  .container-tecnologia h1,
+  .container-publico h1,
+  .container-equipe h1,
+  .container-beneficios h1,
+  .container-objetivos h1 {
+    font-size: 36px;
+  }
+
   .grid-cards-objetivos,
-  .grid-cards {
+  .grid-cards-publico,
+  .grid-cards-equipe {
     grid-template-columns: 1fr;
   }
 
-  .grid-cards-publico,
-  .grid-cards-equipe {
-    grid-template-columns: repeat(2, 1fr);
+  .grid-cards {
+    padding: 30px 0;
   }
 
-  /* Formulários */
-  .input-formularios {
-    width: 100%;
+  .card-objetivos,
+  .card-beneficio,
+  .card-contato,
+  .card-sugestao {
+    padding: 25px;
+  }
+
+  .card-objetivos p,
+  .card-beneficio p {
+    font-size: 18px;
+  }
+
+  .card-beneficio h2 {
+    font-size: 24px;
+  }
+
+  .card-equipe {
+    align-items: center;
+    text-align: center;
+  }
+
+  .foto-equipe {
+    width: 180px;
+    height: 180px;
+  }
+
+  .container-formularios {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .sugestao-radios {
+    flex-wrap: wrap;
+    gap: 15px;
   }
 
   .botoes-formularios {
@@ -1376,117 +1447,98 @@ fieldset {
 
   .botoes-formularios button {
     width: 100%;
+    margin: 0;
   }
 
-  /* Footer */
-  .container-footer {
-    display: flex;
+  .imagens-tecnologia img {
+    height: 250px;
+  }
+
+  .container-footer,
+  .footer-menu {
     flex-direction: column;
-    align-items: center;
     text-align: center;
-    gap: 15px;
+    gap: 20px;
   }
 
   .linha-vertical {
     display: none;
   }
 
-  .footer-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    text-align: center;
-  }
-
   .footer-links {
-    display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px 18px;
-    padding: 0;
+    gap: 15px;
+  }
+
+  #direitos {
+    text-align: center;
   }
 }
 
-/* ---------- Celular (até 480px) ---------- */
+/* Celulares 480p */
 @media (max-width: 480px) {
-  #hero h1 {
+  #hero {
+    padding: 60px 20px;
+  }
+
+  .hero-texto h1 {
     font-size: 32px;
   }
 
-  #hero h2 {
-    font-size: 18px;
+  .hero-texto h2 {
+    font-size: 21px;
   }
 
-  main section h1 {
-    font-size: 24px;
+  .hero-texto p {
+    font-size: 16px;
+  }
+
+  .citizentech,
+  .fiap-destaque {
+    font-size: 16px;
+  }
+
+  .identificacao {
+    margin-bottom: 35px;
+  }
+
+  .container-tecnologia h1,
+  .container-publico h1,
+  .container-equipe h1,
+  .container-beneficios h1,
+  .container-objetivos h1 {
+    font-size: 28px;
+    letter-spacing: 2px;
+  }
+
+  .bloco-conteudo-sobre {
+    padding: 20px;
+  }
+
+  .card-contato,
+  .card-sugestao {
+    padding: 20px;
   }
 
   #titulo-slideshow {
-    font-size: 18px;
-  }
-
-  .grid-cards-publico,
-  .grid-cards-equipe {
-    grid-template-columns: 1fr;
-  }
-}
-/* ================= MENU: espaçamento e sem quebra de linha ================= */
-
-.container-menu {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  /* espaço entre o logo e o menu */
-}
-
-.logo {
-  flex-shrink: 0;
-  /* o logo nunca é espremido */
-  white-space: nowrap;
-}
-
-#menu-items {
-  display: flex;
-  gap: 28px;
-  /* espaço entre os links */
-}
-
-.menu-links {
-  white-space: nowrap;
-  /* impede "O / PROJETO" de quebrar em duas linhas */
-}
-
-/* Telas médias: diminui um pouco para caber tudo */
-@media (max-width: 1100px) {
-  .container-menu {
-    gap: 20px;
-  }
-
-  #menu-items {
-    gap: 16px;
-  }
-
-  .menu-links {
-    font-size: 11px;
+    font-size: 20px;
     letter-spacing: 1px;
   }
-}
 
-/* Telas menores: logo em cima, links embaixo */
-@media (max-width: 900px) {
-  header .container-menu {
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px 15px;
+  .slideshow button {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
   }
 
-  #menu-items {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px 18px;
-    padding: 0;
+  .foto-equipe {
+    width: 150px;
+    height: 150px;
+  }
+
+  .footer-links {
+    font-size: 12px;
   }
 }
 

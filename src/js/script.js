@@ -9,7 +9,7 @@ async function boasVindas() {
     title:
       'Bem-vindo(a) ao FLUXO<br><span style="color: #06dffb;"> SEGURO</span>!',
     text: "Conheça como funciona o projeto feito para a Global Solution (CitizenTech) da FIAP.",
-    confirmButtonColor: "#06335f",
+    confirmButtonColor: "#1f5d9b",
     confirmButtonText: "Conhecer",
   });
 
@@ -22,7 +22,7 @@ async function boasVindas() {
     inputPlaceholder: "Digite o seu nome...",
     allowOutsideClick: false, // Não fecha clicando fora
     allowEscapeKey: false, // Não fecha com esc
-    confirmButtonColor: "#06335f",
+    confirmButtonColor: "#1f5d9b",
     inputValidator: (valor) => {
       if (valor.trim() === "") {
         // Se o valor estiver vazio é pedido o nome novamente / trim tira os espaços colocado no começo e final do nome
@@ -48,8 +48,6 @@ async function boasVindas() {
 
 boasVindas();
 
-
-
 // SLIDESHOW ==========================
 
 (function () {
@@ -70,6 +68,14 @@ boasVindas();
   const imagemSlide = document.getElementById("imagem-slideshow");
   const tituloSlide = document.getElementById("titulo-slideshow");
   const indicadores = document.getElementById("indicadores");
+  const botaoProximo = document.getElementById("proximo");
+  const botaoAnterior = document.getElementById("anterior");
+
+  // Se faltar algum elemento no HTML, sai do slideshow sem quebrar o resto do script
+  if (!imagemSlide || !tituloSlide || !indicadores || !botaoProximo || !botaoAnterior) {
+    console.warn("Slideshow: algum elemento não foi encontrado no HTML.");
+    return;
+  }
 
   // Criar as bolinhas automaticamente
   imagens.forEach(function (imagem, i) {
@@ -86,18 +92,12 @@ boasVindas();
   // Atualizar imagem, título e bolinhas
   function mostrarSlide() {
     imagemSlide.src = imagens[indice];
-
     tituloSlide.textContent = titulos[indice];
 
-    // Atualizar bolinha ativa
     const bolinhas = indicadores.querySelectorAll("span");
 
     bolinhas.forEach(function (bolinha, i) {
-      bolinha.classList.remove("ativo");
-
-      if (i === indice) {
-        bolinha.classList.add("ativo");
-      }
+      bolinha.classList.toggle("ativo", i === indice);
     });
   }
 
@@ -124,9 +124,8 @@ boasVindas();
   }
 
   // Eventos das setinhas
-  document.getElementById("proximo").addEventListener("click", proximoSlide);
-
-  document.getElementById("anterior").addEventListener("click", anteriorSlide);
+  botaoProximo.addEventListener("click", proximoSlide);
+  botaoAnterior.addEventListener("click", anteriorSlide);
 
   // Exibir primeira imagem
   mostrarSlide();
@@ -142,6 +141,9 @@ let formularioContato = document.getElementById("formularioContato");
 
 // Verifica se o usuário clicou no botão enviar sem preencher tudo e mostra um alerta
 formularioContato.addEventListener("submit", function (enviar) {
+
+  enviar.preventDefault(); // preventDefault -> Não envia o formulário e não recarrega a página
+
   // Cria as variáveis para receber os IDs e o valor de cada campo do formulário
   let nome = document.getElementById("contato-nome").value.trim(); // Nome
   let email = document.getElementById("contato-email").value.trim(); // E-mail
@@ -156,6 +158,7 @@ formularioContato.addEventListener("submit", function (enviar) {
       icon: "success",
       title: `Obrigado(a), ${nome}!`,
       text: "A equipe Core recebeu sua mensagem. Entraremos em contato em breve.",
+      confirmButtonColor: "#1f5d9b"
     });
 
     formularioContato.reset(); // Limpa os campos
@@ -167,10 +170,9 @@ formularioContato.addEventListener("submit", function (enviar) {
       icon: "error",
       title: "Dados faltando",
       text: `${nome}, por favor, preencha todos os dados!`,
+      confirmButtonColor: "#1f5d9b"
     });
   }
-
-  enviar.preventDefault(); // preventDefault -> Não envia o formulário e não recarrega a página
 });
 
 // =======================================================================
@@ -179,6 +181,9 @@ formularioContato.addEventListener("submit", function (enviar) {
 let formularioSugestao = document.getElementById("formularioSugestao");
 
 formularioSugestao.addEventListener("submit", function (enviar) {
+
+  enviar.preventDefault();
+
   let nome = document.getElementById("sugestao-nome").value.trim();
   let email = document.getElementById("sugestao-email").value.trim();
   let melhoria = document.getElementById("tipo-melhoria").checked;
@@ -198,6 +203,7 @@ formularioSugestao.addEventListener("submit", function (enviar) {
       icon: "success",
       title: `Obrigado(a), ${nome}!`,
       text: "A equipe Core recebeu sua mensagem. Entraremos em contato em breve.",
+      confirmButtonColor: "#1f5d9b"
     });
 
     formularioSugestao.reset(); // Limpa os campos
@@ -209,37 +215,35 @@ formularioSugestao.addEventListener("submit", function (enviar) {
       icon: "error",
       title: "Dados faltando",
       text: `${nome}, por favor, preencha todos os dados!`,
+      confirmButtonColor: "#1f5d9b"
     });
   }
-
-  enviar.preventDefault();
 });
 
 // ---------------------------------------------------
 
 // Limpar formulário (Evitar que o usuário clique sem querer no limpar)
 function confirmarLimpeza(formulario) {
-  formulario.addEventListener("reset", function (evento) {
-    // Ao confirmar no botão é deixado limpar
-    if (formulario.dataset.confirmado === "sim") {
-      formulario.dataset.confirmado = "nao";
-      return;
-    }
+  
+  // Pega o botão de limpar que está dentro do formulário
+  const botaoLimpar = formulario.querySelector('button[type="reset"]');
 
-    evento.preventDefault(); // Cancela a limpeza automática
+  // Agora escuta o clique do mouse no botão, e não o evento "reset" do formulário
+  botaoLimpar.addEventListener("click", function (evento) {
+    
+    evento.preventDefault(); // Cancela a limpeza automática do botão
 
     Swal.fire({
       title: "Tem certeza?",
       text: "Todos os dados digitados serão apagados.",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#06335f",
+      confirmButtonColor: "#1f5d9b",
       confirmButtonText: "Sim, quero limpar",
       cancelButtonText: "Não",
     }).then((resultado) => {
       if (resultado.isConfirmed) {
-        formulario.dataset.confirmado = "sim";
-        formulario.reset();
+        formulario.reset(); // Só limpa se o usuário clicar em "Sim"
       }
     });
   });

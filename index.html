@@ -16,7 +16,6 @@
 
   <!-- JAVASCRIPT FRAMEWORK -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <link rel="stylesheet" href="sweetalert2.min.css">
 
   <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -143,7 +142,8 @@
 
 
       <!-- SlideShow -->
-      <h3 id="titulo-slideshow">ALAGAMENTOS URBANOS</h3>
+      <h3>Prevenção que salva vidas</h3>
+      <h1 id="titulo-slideshow">Alagamentos Urbanos</h1>
 
       <div class="slideshow">
         <img id="imagem-slideshow" src="./src/assets/img/secao_prototipo/imagem1.png" alt="Imagem do projeto">
@@ -151,6 +151,8 @@
         <button id="anterior" type="button">&#10094;</button>
         <button id="proximo" type="button">&#10095;</button>
       </div>
+
+      <div id="indicadores" class="indicadores"></div>
     </section>
 
 
@@ -158,8 +160,6 @@
     <!-- Seção: Protótipo ################################# -->
 
 
-
-    <!-- Seção: Tecnologia ################################# -->
 
     <!-- Seção: Tecnologia ################################# -->
   
@@ -510,7 +510,7 @@
         <div class="card-contato">
           <h3>Entre em contato</h3>
           <h1>Contrate a nossa solução</h1>
-          <form id="formularioContato" method="post"> <!-- Evitar que os dados do usuário apareça na url -->
+          <form id="formularioContato">
             <fieldset>
               <!-- Formulário -->
               <legend>Preencha os dados com o seu contato</legend>
@@ -552,7 +552,7 @@
         <div class="card-sugestao">
           <h3>Sua opinião importa</h3>
           <h1>Deixe sua sugestão aqui</h1>
-          <form id="formularioSugestao" method="post">
+          <form id="formularioSugestao">
             <fieldset>
               <!-- Formulário -->
               <legend>O que podemos melhorar?</legend>
@@ -592,7 +592,7 @@
 
               <!-- Botões -->
               <div class="botoes-formularios">
-                <button class="botao-limpar" id="limpar-sugestao" type="button">Limpar formulário</button>
+                <button class="botao-limpar" id="limpar-sugestao" type="reset">Limpar formulário</button>
                 <button class="botao-enviar" type="submit">Enviar sugestão</button>
               </div>
             </fieldset>

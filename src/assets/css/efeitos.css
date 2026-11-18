@@ -14,11 +14,18 @@
 }
 
 /* Links ------------------------------ */
-.logo a:visited,
-.logo a:active,
 .menu-links,
 .menu-links:visited,
-.menu-links:active {
+.menu-links:active,
+.menu-links:focus {
+  color: var(--cor-destaque-branco);
+}
+
+.logo a,
+.logo a:visited,
+.logo a:hover,
+.logo a:active,
+.logo a:focus {
   color: var(--cor-destaque-branco);
 }
 
@@ -30,12 +37,23 @@ p::selection {
 
 /* Animação da Logo */
 .logo a {
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 /* Ao passar o mouse */
 .logo a:hover {
   transform: scale(1.06);
+}
+
+.logo {
+  transition: filter 0.5s ease;
+}
+
+/* Neon na logo ao passar o mouse */
+.logo:hover {
+  filter:
+    drop-shadow(0 0 3px rgba(6, 223, 251, 0.6))
+    drop-shadow(0 0 7px rgba(32, 229, 255, 0.3));
 }
 
 
