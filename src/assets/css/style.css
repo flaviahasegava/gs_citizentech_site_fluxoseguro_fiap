@@ -245,25 +245,6 @@ header {
   border-radius: 10px;
 }
 
-/* RESPONSIVIDADE */
-@media (max-width: 768px) {
-  #hero {
-    padding: 60px 6%;
-  }
-
-  .hero-texto h1 {
-    font-size: 36px;
-  }
-
-  .hero-texto h2 {
-    font-size: 23px;
-  }
-
-  .hero-texto p {
-    font-size: 14px;
-  }
-}
-
 /* Seção: Sobre ------------------------------ */
 #sobre {
   background-color: var(--background-escuro);
@@ -856,6 +837,8 @@ header {
 /* Cards */
 .card-contato,
 .card-sugestao {
+  display: flex;
+  flex-direction: column;
   flex: 1;
   background-color: var(--background-bloco);
   padding: 60px;
@@ -869,6 +852,7 @@ header {
   border: 2px solid var(--cor-destaque-azul-claro);
   border-radius: 8px;
   padding: 20px;
+  flex: 1;
 }
 
 /* Legend */
@@ -931,11 +915,13 @@ header {
 
 /* Notificar e-mail checkbox */
 .sugestao-checkbox {
-  margin-top: 14px;
+  margin-top: 12px;
 }
 
 .sugestao-checkbox label {
   display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /* Botões */
@@ -1070,8 +1056,6 @@ footer .logo img {
 #direitos {
   text-align: right;
 }
-
-
 
 /* Responsividade ------------------------------ */
 
