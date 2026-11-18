@@ -161,8 +161,7 @@ p::selection {
 
 /* EFEITO DO BOTÃO */
 .botao-hero:hover {
-  background-color: var(--cor-destaque-agua);
-  transform: translateY(-3px);
+  box-shadow: 0 0 22px rgba(6, 223, 251, 0.65);
 }
 
 #hero::after {
@@ -264,18 +263,17 @@ p::selection {
   font-weight: 800;
 }
 
+
+
 /* Seção: Tecnologia ------------------------------ */
 
-
 /* Animação das esferas */
-
 /* Movimento suave das esferas */
 .esferas-tecnologia img {
   transition: transform 0.3s ease;
 }
 
 /* Aumenta ao passar o mouse */
-
 .esferas-tecnologia img:hover {
   transform: scale(1.1);
   filter: drop-shadow(0px 0px 10px cyan);
@@ -290,7 +288,6 @@ p::selection {
 }
 
 /* Animação ao passar o mouse no carrousel */
-
 .imagens-tecnologia img {
   transition: transform 0.3s ease;
 }
@@ -340,7 +337,10 @@ p::selection {
   }
 }
 
+
+
 /* Animação Seção: Objetivos ------------------------------*/
+
 /* Tamanho inicial do card e altura */
 .card-objetivos {
   max-height: 180px;

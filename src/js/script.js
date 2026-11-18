@@ -72,7 +72,13 @@ boasVindas();
   const botaoAnterior = document.getElementById("anterior");
 
   // Se faltar algum elemento no HTML, sai do slideshow sem quebrar o resto do script
-  if (!imagemSlide || !tituloSlide || !indicadores || !botaoProximo || !botaoAnterior) {
+  if (
+    !imagemSlide ||
+    !tituloSlide ||
+    !indicadores ||
+    !botaoProximo ||
+    !botaoAnterior
+  ) {
     console.warn("Slideshow: algum elemento não foi encontrado no HTML.");
     return;
   }
@@ -141,7 +147,6 @@ let formularioContato = document.getElementById("formularioContato");
 
 // Verifica se o usuário clicou no botão enviar sem preencher tudo e mostra um alerta
 formularioContato.addEventListener("submit", function (enviar) {
-
   enviar.preventDefault(); // preventDefault -> Não envia o formulário e não recarrega a página
 
   // Cria as variáveis para receber os IDs e o valor de cada campo do formulário
@@ -158,7 +163,7 @@ formularioContato.addEventListener("submit", function (enviar) {
       icon: "success",
       title: `Obrigado(a), ${nome}!`,
       text: "A equipe Core recebeu sua mensagem. Entraremos em contato em breve.",
-      confirmButtonColor: "#1f5d9b"
+      confirmButtonColor: "#1f5d9b",
     });
 
     formularioContato.reset(); // Limpa os campos
@@ -170,7 +175,7 @@ formularioContato.addEventListener("submit", function (enviar) {
       icon: "error",
       title: "Dados faltando",
       text: `${nome}, por favor, preencha todos os dados!`,
-      confirmButtonColor: "#1f5d9b"
+      confirmButtonColor: "#1f5d9b",
     });
   }
 });
@@ -181,7 +186,6 @@ formularioContato.addEventListener("submit", function (enviar) {
 let formularioSugestao = document.getElementById("formularioSugestao");
 
 formularioSugestao.addEventListener("submit", function (enviar) {
-
   enviar.preventDefault();
 
   let nome = document.getElementById("sugestao-nome").value.trim();
@@ -203,7 +207,7 @@ formularioSugestao.addEventListener("submit", function (enviar) {
       icon: "success",
       title: `Obrigado(a), ${nome}!`,
       text: "A equipe Core recebeu sua mensagem. Entraremos em contato em breve.",
-      confirmButtonColor: "#1f5d9b"
+      confirmButtonColor: "#1f5d9b",
     });
 
     formularioSugestao.reset(); // Limpa os campos
@@ -215,7 +219,7 @@ formularioSugestao.addEventListener("submit", function (enviar) {
       icon: "error",
       title: "Dados faltando",
       text: `${nome}, por favor, preencha todos os dados!`,
-      confirmButtonColor: "#1f5d9b"
+      confirmButtonColor: "#1f5d9b",
     });
   }
 });
@@ -224,13 +228,11 @@ formularioSugestao.addEventListener("submit", function (enviar) {
 
 // Limpar formulário (Evitar que o usuário clique sem querer no limpar)
 function confirmarLimpeza(formulario) {
-  
   // Pega o botão de limpar que está dentro do formulário
   const botaoLimpar = formulario.querySelector('button[type="reset"]');
 
   // Agora escuta o clique do mouse no botão, e não o evento "reset" do formulário
   botaoLimpar.addEventListener("click", function (evento) {
-    
     evento.preventDefault(); // Cancela a limpeza automática do botão
 
     Swal.fire({
