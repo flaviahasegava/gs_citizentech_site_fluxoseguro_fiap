@@ -723,6 +723,195 @@ header {
   margin-bottom: 20px;
 }
 
+/* Seção: Protótipo ------------------------------ */
+
+/* Seção: Protótipo ------------------------------ */
+#prototipo {
+  background-color: var(--background-escuro);
+  padding: 100px 60px;
+}
+
+#prototipo .container-prototipo {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Títulos */
+#prototipo h3 {
+  color: var(--cor-subtitulo);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+#prototipo h1 {
+  color: var(--cor-destaque-branco);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 48px;
+  margin-bottom: 50px;
+}
+
+/* Protótipo e mensagem lado a lado */
+#prototipo .conteudo-prototipo {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+#prototipo .visualizacao-prototipo {
+  width: 60%;
+  min-width: 0;
+}
+
+#prototipo .monitoramento-prototipo {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Carrossel */
+#prototipo .carrossel-prototipo {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 15px;
+  background-color: transparent;
+}
+
+#prototipo .imagens-prototipo {
+  display: flex;
+}
+
+#prototipo .imagens-prototipo img {
+  display: block;
+  width: 100%;
+  height: 500px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* Mensagem em destaque */
+#prototipo .monitoramento-prototipo h2 {
+  color: var(--cor-destaque-branco);
+  font-size: 32px;
+  line-height: 1.4;
+  margin-bottom: 30px;
+}
+
+#prototipo .monitoramento-prototipo h2 span {
+  color: var(--cor-destaque-agua);
+}
+
+/* Botão do banco de dados */
+#prototipo .botao-banco-prototipo {
+  display: inline-block;
+  padding: 18px 26px;
+  background-color: var(--cor-destaque-azul-escuro);
+  color: var(--cor-destaque-branco);
+  border: 2px solid var(--cor-destaque-agua);
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Rodapé da seção */
+#prototipo .rodape-prototipo {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 1px solid var(--cor-linha-destaque);
+}
+
+/* Links */
+#prototipo .link-prototipo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 24px;
+  background-color: var(--background-menu-nav);
+  color: var(--cor-destaque-branco);
+  border: 1px solid var(--cor-linha-destaque);
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Logos */
+#prototipo .link-prototipo img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+/* Telas menores */
+@media (max-width: 900px) {
+  #prototipo .conteudo-prototipo {
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  #prototipo .visualizacao-prototipo {
+    width: 100%;
+  }
+
+  #prototipo .monitoramento-prototipo {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+  #prototipo {
+    padding: 60px 20px;
+  }
+
+  #prototipo h1 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+
+  #prototipo .imagens-prototipo img {
+    height: 320px;
+  }
+
+  #prototipo .monitoramento-prototipo h2 {
+    font-size: 24px;
+  }
+
+  #prototipo .rodape-prototipo {
+    gap: 12px;
+  }
+}
+
+/* Ajustes para computador */
+@media (min-width: 901px) {
+
+  /* Aproveita mais a largura da página */
+  #prototipo .container-prototipo {
+    max-width: 1600px;
+  }
+
+  /* Alinha a imagem à esquerda dentro do carrossel */
+  #prototipo .imagens-prototipo img {
+    object-position: left center;
+  }
+
+  /* Afasta os links do conteúdo acima */
+  #prototipo .rodape-prototipo {
+    margin-top: 100px;
+    padding-top: 40px;
+  }
+}
+
 /* Seção: Equipe ------------------------------ */
 
 /* Icone do LinkedIn */
@@ -1300,3 +1489,4 @@ fieldset {
     padding: 0;
   }
 }
+

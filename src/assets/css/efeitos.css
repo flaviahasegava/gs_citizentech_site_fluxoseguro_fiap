@@ -439,6 +439,60 @@ p::selection {
   box-shadow: 0px 8px 20px rgba(6, 51, 95, 0.2);
 }
 
+/* Seção: Protótipo ------------------------------ */
+
+/* Brilho permanente */
+#prototipo .carrossel-prototipo {
+  filter: drop-shadow(0px 0px 1px var(--cor-destaque-agua));
+}
+
+/* Movimento suave dos botões */
+#prototipo .link-prototipo,
+#prototipo .botao-banco-prototipo {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0px 0px 6px cyan
+}
+
+/* Destaque dos links */
+#prototipo .link-prototipo:hover {
+  transform: translateY(-4px);
+  border-color: var(--cor-destaque-agua);
+}
+
+/* Destaque do banco de dados */
+#prototipo .botao-banco-prototipo:hover {
+  background-color: var(--cor-destaque-agua);
+  color: var(--cor-texto-escuro);
+  transform: scale(1.03);
+}
+
+/* Carrossel com três imagens */
+#prototipo .imagens-prototipo {
+  animation-name: passar-prototipo;
+  animation-duration: 16s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* Pausa ao passar o mouse */
+#prototipo .carrossel-prototipo:hover .imagens-prototipo {
+  animation-play-state: paused;
+}
+
+@keyframes passar-prototipo {
+  0%, 25% {
+    transform: translateX(0);
+  }
+
+  35%, 60% {
+    transform: translateX(-100%);
+  }
+
+  70%, 100% {
+    transform: translateX(-200%);
+  }
+}
+
 /* Seção: Equipe ------------------------------*/
 /* Linha do Card */
 .card-equipe::before {
