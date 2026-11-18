@@ -45,6 +45,8 @@
   --z-index-header: 999; /* Menu */
   --z-index-cards: 1; /* Cards */
   --z-index-efeitos: 10; /* Efeitos */
+  --z-index-hero: 2; /* Conteúdo Hero */
+  --z-index-botao: 3; /* Botão Hero */
 }
 
 /* HTML ------------------------------ */
@@ -172,6 +174,8 @@ header {
 
 .container-hero {
   margin-top: 32px;
+  position: relative;
+  z-index: var(--z-index-hero);
 }
 
 .link-externo {
@@ -243,7 +247,12 @@ header {
 
   border: 1px solid var(--cor-destaque-branco);
   border-radius: 10px;
+
+  position: relative;
+  z-index: --z-index-botao;
 }
+
+
 
 /* Seção: Sobre ------------------------------ */
 #sobre {
@@ -390,7 +399,11 @@ header {
   font-weight: bold;
 }
 
+
+
 /* Seção: Protótipo ------------------------------ */
+
+
 
 /* Seção: Tecnologia ------------------------------ */
 #tecnologia {
@@ -1338,4 +1351,15 @@ fieldset {
   .footer-links {
     font-size: 12px;
   }
+}
+
+
+.container-hero {
+  position: relative;
+  z-index: var(--z-index-hero);
+}
+
+.botao-hero {
+  position: relative;
+  z-index: 3;
 }
