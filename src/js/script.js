@@ -137,8 +137,6 @@ boasVindas();
   mostrarSlide();
 })();
 
-
-
 // Formulários ==========================
 
 // Formulário Contato
