@@ -48,8 +48,9 @@ async function boasVindas() {
 
 boasVindas();
 
-// SLIDESHOW ==========================
 
+
+// SLIDESHOW ==========================
 (function () {
   const imagens = [
     "./src/assets/img/secao_prototipo/imagem1.png",
@@ -136,6 +137,85 @@ boasVindas();
   // Exibir primeira imagem
   mostrarSlide();
 })();
+
+
+
+// SLIDESHOW Tecnologia e Protótipo ==========================
+function iniciarCarrossel(secao, tempo) {
+  const carrossel = document.querySelector(".carrossel-" + secao);
+  if (!carrossel) return;
+
+  const faixa = carrossel.querySelector(".imagens-" + secao);
+  const imagens = faixa.querySelectorAll("img");
+  let atual = 0;
+
+  // O JavaScript passa a controlar a troca das imagens.
+  faixa.style.animation = "none";
+
+  // Coloca as bolinhas abaixo do carrossel.
+  const pontos = document.createElement("div");
+  pontos.className = "pontos-carrossel";
+  carrossel.after(pontos);
+
+  function mostrar(numero) {
+    if (numero < 0) numero = imagens.length - 1;
+    if (numero >= imagens.length) numero = 0;
+    atual = numero;
+
+    faixa.style.transform = "translateX(-" + atual * 100 + "%)";
+
+    for (let i = 0; i < imagens.length; i++) {
+      pontos.children[i].setAttribute("aria-current", i === atual);
+    }
+  }
+
+  // As imagens passam sozinhas até a pessoa escolher uma delas.
+  const relogio = setInterval(function () {
+    if (!carrossel.matches(":hover")) mostrar(atual + 1);
+  }, tempo);
+
+  function escolher(numero) {
+    clearInterval(relogio);
+    mostrar(numero);
+  }
+
+  function criarSeta(classe, simbolo, descricao, passo) {
+    const seta = document.createElement("button");
+    seta.type = "button";
+    seta.className = "seta-carrossel " + classe;
+    seta.textContent = simbolo;
+    seta.setAttribute("aria-label", descricao);
+
+    seta.addEventListener("click", function () {
+      escolher(atual + passo);
+    });
+
+    carrossel.appendChild(seta);
+  }
+
+  criarSeta("voltar", "‹", "Imagem anterior", -1);
+  criarSeta("avancar", "›", "Próxima imagem", 1);
+
+  imagens.forEach(function (imagem, i) {
+    const ponto = document.createElement("button");
+    ponto.type = "button";
+    ponto.setAttribute("aria-label", "Mostrar imagem " + (i + 1) + ": " + imagem.alt);
+
+    ponto.addEventListener("click", function () {
+      escolher(i);
+    });
+
+    pontos.appendChild(ponto);
+  });
+
+  mostrar(0);
+}
+
+// Ativa as setas e as 3 bolinhas do protótipo.
+iniciarCarrossel("prototipo", 5000);
+iniciarCarrossel("tecnologia", 4000);
+
+
 
 // Formulários ==========================
 
