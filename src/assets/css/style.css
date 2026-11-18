@@ -1352,14 +1352,3 @@ fieldset {
     font-size: 12px;
   }
 }
-
-
-.container-hero {
-  position: relative;
-  z-index: var(--z-index-hero);
-}
-
-.botao-hero {
-  position: relative;
-  z-index: 3;
-}
